@@ -1,0 +1,118 @@
+﻿@model Application.Users.DTO.EditUserDataModel
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>پروفایل کاربر</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Profile">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" id="Id" asp-for="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="FristName" class="control-label"></label>
+                <input asp-for="FristName" id="FristName" class="form-control" />
+                <span asp-validation-for="FristName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" id="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" id="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" id="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" id="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+             <textarea id="Address" class="form-control " asp-for="Address" rows="5"></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+            <div class="form-group">
+                <a onclick="EditUser()" class="btn btn-primary btn-login">ثبت </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="~/Sweetalert2/sweetalert2.min.js"></script>
+    
+<script>
+    function EditUser()
+    {
+        var Id = $("#Id").val();
+        var FristName = $("#FristName").val();
+        var LastName = $("#LastName").val();
+        var Email = $("Email").val();
+        var PhoneNumber = $("#PhoneNumber").val();
+        var UserName = $("#UserName").val();
+        var Address = $("#Address").val();
+
+        var postData = {
+            'Id': Id,
+            'FristName': FristName,
+            'LastName' : LastName,
+            'Email': Email,
+            'PhoneNumber' : PhoneNumber,
+            'UserName': UserName,
+            'Address' : Address
+        };
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "Profile",
+            data: postData,
+            success: function (data) {
+                if (data.result) {
+                    Swal.fire({
+                        text: data.message,
+                        icon: 'success',
+                        title:'حله'
+                    }).then(function (isConfirm) {
+                        window.location.replace("/User/Index");
+                    });
+                }
+                else {
+                    swal.fire(
+                        'هشدار!',
+                        data.message,
+                        'warning'
+                    );
+
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+
+    }
+</script>
+
+}

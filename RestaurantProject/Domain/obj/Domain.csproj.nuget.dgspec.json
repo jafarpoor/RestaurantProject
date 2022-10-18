@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "F:\\RestaurantProject\\Domain\\Domain.csproj": {}
+    "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "F:\\RestaurantProject\\Domain\\Domain.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\RestaurantProject\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\RestaurantProject\\Domain\\Domain.csproj",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
-        "outputPath": "F:\\RestaurantProject\\Domain\\obj\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,22 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -54,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

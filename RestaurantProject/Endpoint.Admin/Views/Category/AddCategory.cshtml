@@ -1,0 +1,78 @@
+﻿@model Application.Categories.DTO.AddCategoryDataModel;
+@{
+    ViewData["Title"] = "افزودن دسته بندی";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-12 col-12 layout-spacing">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4> ثبت دسته بندی جدید  </h4>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+            <form asp-controller="Category" asp-action="AddCategory" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group mb-4">
+                    <label asp-for="Name">نام دسته بندی</label>
+                    <input id="Name" type="text" class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <a onclick="AddNewCategory()" class="btn btn-primary btn-login">ثبت </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+    <script>
+    function AddNewCategory()
+    {
+        var Name = $("#Name").val();
+
+        var postData = {
+            'Name': Name
+        };
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "AddCategory",
+            data: postData,
+            success: function (data) {
+                if (data.result) {
+                    Swal.fire({
+                        text: data.message,
+                        icon: 'success',
+                        title:'حله'
+                    }).then(function (isConfirm) {
+                        window.location.replace("/Category/GetList");
+                    });
+                }
+                else {
+                    swal.fire(
+                        'هشدار!',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+    }
+    </script>
+
+}
