@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Application.Categories.DTO.ListCategoryItemDataModel>
+@{
+    ViewData["Title"] = "لیست محصولات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mb-10" style="transform: none;">
+    <div class="col-lg-12 col-md-12">
+        <div class="listing-items row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 px-0">
+                    <div class="product-card">
+                        <div class="product-card-top">
+                            <a href="" class="product-image">
+                                <img src="@item.SrcImage" alt="@item.Name">
+                            </a>
+                        </div>
+                        <div class="product-card-middle">
+                            <h6 class="product-name">
+                                @item.Name
+                            </h6>
+                            <h6 class="product-info">
+                                @item.Note
+                            </h6>
+                            <h5 class="product-info text-danger  text-center">
+                                @item.Price.ToString("n0") تومان
+                            </h5>
+                        </div>
+                        <div class="product-card-bottom">
+                            <a asp-action="Details" asp-controller="Product" asp-route-id="@item.Id" class="btn-add-to-cart">
+                                <i class="fad fa-cart-plus"></i>
+                               افزودن به سبد خرید
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            <div class="col-12 px-0">
+                <div class="pagination">
+                    <a href="#" class="prev"><i class="far fa-arrow-from-left"></i></a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="current">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#" class="next"><i class="far fa-arrow-to-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

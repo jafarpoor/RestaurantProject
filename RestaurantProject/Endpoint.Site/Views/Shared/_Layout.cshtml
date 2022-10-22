@@ -1,48 +1,294 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - EndPoint.Site</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> فروشگاه رستورانت </title>
+    <!-- font-awesome -->
+  
+    <link rel="stylesheet" href="~/Theme/assets/css/font-awesome.min.css">
+    <!-- Bootstrap 4.5.3 -->
+    <link rel="stylesheet" href="~/Theme/assets/bootstrap/css/bootstrap.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/Theme/assets/css/plugins/apexcharts.css">
+    <link rel="stylesheet" href="~/Theme/assets/css/plugins/jquery.classycountdown.min.css">
+    <link rel="stylesheet" href="~/Theme/assets/css/plugins/nouislider.min.css">
+    <link rel="stylesheet" href="~/Theme/assets/css/plugins/select2.min.css">
+    <link rel="stylesheet" href="~/Theme/assets/css/plugins/swiper.min.css">
+    <!-- CSS Template -->
+    <link rel="stylesheet" href="~/Theme/assets/css/theme.css">
+    <!-- Here goes your custom.css -->
+    <link rel="stylesheet" href="~/Theme/assets/css/custom.css">
+    <!-- colors: amber,blue,brown,cyan,default,green,indigo,orange,pink,purple,red,teal,yellow -->
+    <link rel="stylesheet" href="~/Theme/assets/css/colors/default.css" id="colorswitch">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EndPoint.Site</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+    <div class="page-wrapper">
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="top-page-header">
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="contact-list">
+                            <ul>
+                                <li><i class="fas fa-phone-rotary"></i><a href="tel: 02100000000">021-00000000</a></li>
+                                <li>
+                                    <i class="fas fa-envelope"></i><a href="mailto: site@example.com">site@example.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+            <div class="container">
+                <div class="bottom-page-header">
+                    <div class="d-flex align-items-center">
+                        <div class="site-logo">
+                            <a href="#">
+                                <img src="~/Theme/assets/images/logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="search-box">
+                            <form asp-action="Index" asp-controller="product" method="get">
+                                <input type="text" name="searchkey" placeholder="نام محصول یا برند را جستجو کنید...">
+                                <i class="far fa-search"></i>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="user-items">
+                        <div class="user-item account">
+                            <!-- <a href="#" class="btn-auth">
+                        <i class="fal fa-user-circle"></i>
+                        ورود و عضویت
+                    </a> -->
+                            <a href="#">
+                                نام کاربر
+                                <i class="fad fa-chevron-down text-sm mr-1"></i>
+                            </a>
+                            <ul class="dropdown--wrapper">
+                                <li class="header-profile-dropdown-account-container">
+                                    <a href="#" class="d-block">
+                                        <span class="header-profile-dropdown-user">
+                                            <span class="header-profile-dropdown-user-img">
+                                                <img src="~/Theme/assets/images/avatar/avatar.png">
+                                            </span>
+                                            <span class="header-profile-dropdown-user-info">
+                                                <p class="header-profile-dropdown-user-name">
+                                                    جلال بهرامی راد
+                                                </p>
+                                                <span class="header-profile-dropdown-user-profile-link">
+                                                    مشاهده حساب
+                                                    کاربری
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="header-profile-dropdown-account">
+                                            <span class="header-profile-dropdown-account-item">
+                                                <span class="header-profile-dropdown-account-item-title">اعتبار</span>
+                                                <span class="header-profile-dropdown-account-item-amount">
+                                                    <span class="header-profile-dropdown-account-item-amount-number">7,500,000</span>
+                                                    تومان
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown--btn-primary">وارد شوید</a>
+                                </li>
+                                <li>
+                                    <span>کاربر جدید هستید؟</span>
+                                    <a href="#" class="border-bottom-dt">ثبت نام</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        پروفایل
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        پیگیری سفارش
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav-wrapper">
+                    @await Component.InvokeAsync("MenuItemComonent")
+                </nav>
+            </div>
+        </header>
+        <!-- header responsive -->
+        <div class="header-responsive">
+            <div class="header-top">
+                <div class="side-navigation-wrapper">
+                    <button class="btn-toggle-side-navigation"><i class="far fa-bars"></i></button>        
+                    <div class="overlay-side-navigation"></div>
+                </div>
+                <div class="site-logo">
+                    <a href="#">
+                        <img src="~/Theme/assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="header-tools">
+                    <a href="#">
+                        <i class="far fa-shopping-basket"></i>
+                        <span class="bag-items-number">2</span>
+                    </a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="search-box">
+                    <form asp-action="Index" asp-controller="product" method="get">
+                        <input type="text" name="searchkey" placeholder="نام محصول یا برند را جستجو کنید...">
+                        <i class="far fa-search"></i>
+                    </form>
+                </div>
+                <div class="header-tools">
+                    <a href="#"><i class="far fa-user-circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end header responsive -->
+        <!-- end Page Header -->
+        <!-- Page Content -->
+        <main class="page-content">
             @RenderBody()
         </main>
+        <!-- end Page Content -->
+        <!-- Page Footer -->
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="page-loader-content">
+                <div class="logo-area">
+                    <img src="~/Theme/assets/images/logo.png" alt="">
+                </div>
+                <span class="loader"></span>
+            </div>
+        </div>
+        <!-- end Page Loader -->
+        <hr />
+        <footer class="main-footer">
+            <div class="back-to-top">
+                <div class="back-btn">
+                    <i class="far fa-chevron-up icon"></i>
+                    <span>برگشت به بالا</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="services row mb-5">
+                    <div class="col-md-3 col-sm-6 mb-md-0 mb-4">
+                        <div class="service-item">
+                            <img src="~/Theme/assets/images/services/delivery-person.png" alt="">
+                            <div class="service-item-body">
+                                <h6>تحویل سریع و رایگان</h6>
+                                <p>تحویل رایگان کالا برای کلیه سفارشات بیش از 500 هزار تومان</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-md-0 mb-4">
+                        <div class="service-item">
+                            <img src="~/Theme/assets/images/services/headset.png" alt="">
+                            <div class="service-item-body">
+                                <h6>پشتیبانی ۲۴ ساعته</h6>
+                                <p>در صورت وجود هرگونه سوال یا ابهامی، با ما در تماس باشید</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-md-0 mb-4">
+                        <div class="service-item">
+                            <img src="~/Theme/assets/images/services/debit-card.png" alt="">
+                            <div class="service-item-body">
+                                <h6>پرداخت آنلاین ایمن</h6>
+                                <p>محصولات مدنظر خود را با خیال آسوده به صورت آنلاین خریداری کنید</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h2 class="widget-title">
+                                رستورانت را در شبکه‌های اجتماعی دنبال کنید:
+                            </h2>
+                            <div class="social">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="widget widget-links mb-2">
+                            <ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
+                                <li class="widget-list-item ml-4">
+                                    <a href="#" class="widget-list-link">درباره رستورانت</a>
+                                </li>
+                                <li class="widget-list-item ml-4">
+                                    <a href="#" class="widget-list-link">تماس با رستورانت</a>
+                                </li>
+                                <li class="widget-list-item ml-4">
+                                    <a href="#" class="widget-list-link">حریم خصوصی</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="copy-right" dir="ltr">
+                            <p>© All rights reserved. Bugeto.Net</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Page Footer -->
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - EndPoint.Site - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- JS Global Compulsory -->
+    <script src="~/Theme/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/popper.min.js"></script>
+    <script src="~/Theme/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/Theme/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/jquery.ez-plus.js"></script>
+    <script src="~/Theme/assets/js/plugins/jquery.knob.js"></script>
+    <script src="~/Theme/assets/js/plugins/jquery.throttle.js"></script>
+    <script src="~/Theme/assets/js/plugins/jquery.classycountdown.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/jquery.nicescroll.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/nouislider.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/select2.full.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/swiper.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/ResizeSensor.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/theia-sticky-sidebar.min.js"></script>
+    <script src="~/Theme/assets/js/plugins/wNumb.js"></script>
+    <!-- JS Template -->
+    <script src="~/Theme/assets/js/theme.js"></script>
+    <!-- Here goes your custom.js -->
+    <script src="~/Theme/assets/js/custom.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

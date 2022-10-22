@@ -2,7 +2,9 @@ using Application.Categories.Commands.AddCategories;
 using Application.Categories.FacadePattern;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
+using Application.UriComposer;
 using Application.Users.FacadePattern;
+using Infrastructure.Api.ImageApi;
 using Infrastructure.AutoMapperConfigs;
 using Infrastructure.IdentityConfigs;
 using Microsoft.AspNetCore.Builder;
@@ -46,7 +48,14 @@ namespace EndPoint.Admin
 
             //Facade
             services.AddScoped<IUsers, UserFacade>();
-            services.AddScoped<ICategory, CategoryFacade>();
+            services.AddTransient<ICategory, CategoryFacade>();
+
+
+            //public
+            services.AddTransient<IUriComposerService, UriComposerService>();
+
+            //Image
+            services.AddTransient<IImageUploadService, ImageUploadService>();
 
             //Mapper
             services.AddAutoMapper(typeof(UserMapperConfig));

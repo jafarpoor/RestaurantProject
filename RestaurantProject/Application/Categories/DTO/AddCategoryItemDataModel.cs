@@ -14,9 +14,9 @@ namespace Application.Categories.DTO
         [DisplayName("نام")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage ="")]
+        [Required(ErrorMessage ="دسته بندی را انتخاب کنید")]
         [DisplayName("نام دسته بندی")]
-        public int ParentId { get; set; }
+        public int CategoryId { get; set; }
 
         [DisplayName("توضیحات")]
         public string Note { get; set; }
@@ -25,10 +25,9 @@ namespace Application.Categories.DTO
         [DisplayName("قیمت")]
         public Int64 Price { get; set; }
 
-        [Required(ErrorMessage = "")]
         [DisplayName("درصد تخفیف")]
-        public int DiscountPercentage { get; set; }
+        public int? DiscountPercentage { get; set; }
 
-        public AddNewCatalogItemImageDataModel AddNewCatalogItemImageDataModel { get; set; }
+        public AddNewCategoryItemImageDataModel addNewCatalogItemImageDataModel { get; set; }
     }
 }

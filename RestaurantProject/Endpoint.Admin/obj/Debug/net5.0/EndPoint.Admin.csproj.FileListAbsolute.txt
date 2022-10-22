@@ -121,6 +121,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\RestSharp.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\System.Composition.Convention.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\System.Composition.Hosting.dll
@@ -207,7 +208,6 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Persisten
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Application.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Common.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Domain.pdb
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.GeneratedMSBuildEditorConfig.editorconfig
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfo.cs
@@ -221,6 +221,11 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\scopedcss
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.TagHelpers.input.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.TagHelpers.output.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.RazorCoreGenerate.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\AddCategory.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\AddCategoryItem.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\GetGategoryItems.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\GetList.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
@@ -238,6 +243,4 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\ref\EndPoint.Admin.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.genruntimeconfig.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\AddCategory.cshtml.g.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\GetList.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache

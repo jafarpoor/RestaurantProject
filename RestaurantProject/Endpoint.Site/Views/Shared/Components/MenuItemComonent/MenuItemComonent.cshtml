@@ -1,0 +1,16 @@
+﻿
+@model  IEnumerable<Application.Categories.DTO.ListCategoryDataModel>
+
+
+<ul>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <li>
+
+                <a asp-controller="Catalog" asp-action="Index" asp-route-parentId=@item.Id><i class="fad fa-seedling text-warning"></i>@item.Name</a>
+            </li>
+        }
+    }
+</ul>

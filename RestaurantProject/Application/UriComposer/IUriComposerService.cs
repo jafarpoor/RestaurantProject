@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Categories.DTO
+namespace Application.UriComposer
 {
-   public class AddNewCatalogItemImageDataModel
+  public  interface IUriComposerService
     {
-        public string Src { get; set; }
+        string ComposeImageUri(string URl);
     }
 }

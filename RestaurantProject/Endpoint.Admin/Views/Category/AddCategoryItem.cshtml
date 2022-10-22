@@ -1,0 +1,164 @@
+﻿@model EndPoint.Admin.Models.AddCategoryItemViewModel
+@{
+    ViewData["Title"] = "افزودن محصول";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">اافزودن محصول</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form id="createForm" class="form" asp-antiforgery="true" onsubmit="return sendDataToServer(event)">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">نام محصول </label>
+                                    <input type="text" asp-for="addCategoryItemDataModel.Name" class="form-control" id="Name">
+                                    <span asp-validation-for="addCategoryItemDataModel.Name" class="text-danger"></span>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1" id="Category">      
+                                    <label for="basicInput">دسته بندی </label>
+                                  
+                                    <select class="form-control" id="Category" asp-items="Model.Caregories"></select>
+                            </div>
+
+                        </div>
+                  <br />
+
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput"> قیمت</label>
+                                    <input type="number" asp-for="addCategoryItemDataModel.Price" class="form-control" id="Price">
+                                    <span asp-validation-for="addCategoryItemDataModel.Price" class="text-danger"></span>
+
+                                </fieldset>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">تصاویر </label>
+                                    <input type="file" class="form-control" accept="image/*" id="Images">
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <label for="basicInput"> درصد تخفیف</label>
+                            <input type="number" asp-for="addCategoryItemDataModel.DiscountPercentage" class="form-control" id="DiscountPercentage">
+                            <span asp-validation-for="addCategoryItemDataModel.DiscountPercentage" class="text-danger"></span>
+
+                        </fieldset>
+
+                        <br />
+
+                        <div class="card col-md-12 row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput"> توضیحات</label>
+                                    <textarea id="Description" asp-for="addCategoryItemDataModel.Note" class="form-control " rows="5"></textarea>
+                                    <span asp-validation-for="addCategoryItemDataModel.Note" class="text-danger"></span>
+                                </fieldset>
+                            </div>
+                        </div>
+         
+                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                            <fieldset class="form-group">
+                                <button type="submit" class="btn btn-success col-md-12"> ثبت محصول</button>
+                            </fieldset>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+@section Scripts {
+
+    <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @*<script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>*@
+    @*<script>
+        ClassicEditor
+            .create(document.querySelector('#Description'), { language: 'fa', contentsLangDirection: 'rtl' })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>*@
+
+    <script>
+
+        function sendDataToServer(e) {
+            e.preventDefault();
+            var form = $("#createForm");
+            form.validate();
+            if (form.valid() == false) {
+                swal.fire(
+                    'هشدار!',
+                    "اطلاعات فرم به درستی وارد نشده است!",
+                    'warning'
+                );
+                return false;
+            }
+
+            var addCategoryItemDataModelData = new FormData();
+            //دریافت مقادیر از تکس باکس ها و....
+            addCategoryItemDataModelData.append('addCategoryItemDataModel.Name', $("#Name").val());
+            addCategoryItemDataModelData.append('addCategoryItemDataModel.DiscountPercentage', $("#DiscountPercentage").val());
+            addCategoryItemDataModelData.append('addCategoryItemDataModel.Note', $("#Description").val());
+            addCategoryItemDataModelData.append('addCategoryItemDataModel.Price', $("#Price").val());
+            addCategoryItemDataModelData.append('addCategoryItemDataModel.CategoryId', $('#Category').find('option:selected').val());
+
+            //دریافت عکس های انتخاب شده توسط کاربر و قرار دادن عکس ها در متغیر data
+            var catalogImages = document.getElementById("Images");
+            if (catalogImages.files.length > 0) {
+                addCategoryItemDataModelData.append('Files', catalogImages.files[0]);
+            }
+
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "AddCategoryItem",
+                contentType: false,
+                processData: false,
+                data: addCategoryItemDataModelData,
+                headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
+                success: function (data) {
+                    if (data.result) {
+                        swal.fire(
+                            'موفق!',
+                            data.message ,
+                            'success'
+                        ).then(function (isConfirm) {
+                            window.location.href = "/catalogitems";
+                        });
+                    }
+                    else {
+                        swal.fire(
+                            'هشدار!',
+                            data.message,
+                            'warning'
+                        );
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+        }
+    </script>
+}
+

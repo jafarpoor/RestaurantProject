@@ -14,6 +14,6 @@ namespace Application.Categories.DTO
         [DisplayName("نام ")]
         [Required(ErrorMessage ="نام را وارد کنید")]
         public string Name { get; set; }
-        
+
     }
 }

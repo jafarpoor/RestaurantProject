@@ -34,6 +34,7 @@ F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.AssemblyInfo.cs
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.csproj.CoreCompileInputs.cache
+F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.csproj.CopyComplete
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.dll
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\ref\Persistence.dll
 F:\RestaurantProject\RestaurantProject\Persistence\obj\Debug\net5.0\Persistence.pdb

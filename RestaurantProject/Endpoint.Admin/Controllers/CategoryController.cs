@@ -1,6 +1,9 @@
 ﻿using Application.Categories.DTO;
 using Application.Interfaces.Categories;
+using EndPoint.Admin.Models;
+using Infrastructure.Api.ImageApi;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +13,12 @@ namespace EndPoint.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-
+        private readonly IImageUploadService _imageUploadService;
         private readonly ICategory _category;
-        public CategoryController(ICategory category)
+        public CategoryController(ICategory category , IImageUploadService imageUploadService)
         {
             _category = category;
+            _imageUploadService = imageUploadService;
         }
         public IActionResult Index()
         {
@@ -30,6 +34,8 @@ namespace EndPoint.Admin.Controllers
         [HttpPost]
         public IActionResult AddCategory(AddCategoryDataModel model)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             return Json(_category.addCategory.Add(model));
         }
 
@@ -39,10 +45,52 @@ namespace EndPoint.Admin.Controllers
             return View(_category.getListCategoyService.GetListCategory());
         }
 
+
         [HttpGet]
-        public IActionResult GetGategoryItems()
+        public IActionResult GetGategoryItems(int parentId)
         {
-            return View();
+            ListCategoryViewModel listView = new ListCategoryViewModel();
+            listView.listCategoryItemDataModels = _category.getListCategoryItemService.GetList(parentId);
+            listView.columnsName = _category.getListCategoryItemService.GetColumnsName();
+            ViewBag.CategoryName = _category.getCategoryName.GetName(parentId);
+            return View(listView);
+        }
+
+        [HttpGet]
+        public IActionResult AddCategoryItem()
+        {
+            var selectList = new List<SelectListItem>();
+            List<ListCategoryDataModel> categoryList =_category.getListCategoyService.GetListCategory();
+            foreach (var item in categoryList)
+            {
+                var itemList = new SelectListItem
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                };
+                selectList.Add(itemList);
+            }
+            AddCategoryItemViewModel model = new AddCategoryItemViewModel();
+            model.Caregories = selectList;
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddCategoryItem(AddCategoryItemViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+            List<AddNewCategoryItemImageDataModel> images = new List<AddNewCategoryItemImageDataModel>();
+            if (model.Files != null)
+            {
+                //Upload 
+                var result = _imageUploadService.Upload(model.Files);
+                var MyAddNewCategoryItemImageDataModel = new AddNewCategoryItemImageDataModel { Src = result };
+                model.addCategoryItemDataModel.addNewCatalogItemImageDataModel = MyAddNewCategoryItemImageDataModel;
+            }
+
+            return Json(_category.addCategoryItemService.AddCaregoryItem(model.addCategoryItemDataModel));
         }
     }
 }

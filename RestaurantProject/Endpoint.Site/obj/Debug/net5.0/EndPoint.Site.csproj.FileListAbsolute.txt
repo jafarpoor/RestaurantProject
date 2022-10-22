@@ -121,6 +121,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\RestSharp.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\System.Composition.Convention.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\System.Composition.Hosting.dll
@@ -222,8 +223,10 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.TagHelpers.output.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.RazorCoreGenerate.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Catalog\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\MenuItemComonent\MenuItemComonent.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

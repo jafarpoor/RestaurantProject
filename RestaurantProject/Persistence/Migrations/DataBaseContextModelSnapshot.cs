@@ -30,7 +30,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 22, 23, 53, 354, DateTimeKind.Local).AddTicks(2397));
+                        .HasDefaultValue(new DateTime(2022, 10, 21, 23, 18, 20, 861, DateTimeKind.Local).AddTicks(8959));
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -54,6 +54,9 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryItemImageId")
                         .HasColumnType("int");
 
@@ -63,7 +66,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 22, 23, 53, 363, DateTimeKind.Local).AddTicks(3965));
+                        .HasDefaultValue(new DateTime(2022, 10, 21, 23, 18, 20, 871, DateTimeKind.Local).AddTicks(5602));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -71,12 +74,6 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ParentCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ParentId")
-                        .HasColumnType("int");
 
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
@@ -89,10 +86,10 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.HasIndex("CategoryItemImageId")
                         .IsUnique();
-
-                    b.HasIndex("ParentCategoryId");
 
                     b.ToTable("CategoryItems");
                 });
@@ -110,7 +107,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 22, 23, 53, 363, DateTimeKind.Local).AddTicks(6885));
+                        .HasDefaultValue(new DateTime(2022, 10, 21, 23, 18, 20, 871, DateTimeKind.Local).AddTicks(9851));
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -156,7 +153,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 22, 23, 53, 363, DateTimeKind.Local).AddTicks(9136));
+                        .HasDefaultValue(new DateTime(2022, 10, 21, 23, 18, 20, 872, DateTimeKind.Local).AddTicks(4067));
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -347,21 +344,21 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Categories.CategoryItem", b =>
                 {
+                    b.HasOne("Domain.Categories.Category", "Category")
+                        .WithMany("categoryItems")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Domain.Categories.CategoryItemImage", "CategoryItemImage")
                         .WithOne("CatalogItem")
                         .HasForeignKey("Domain.Categories.CategoryItem", "CategoryItemImageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Categories.Category", "ParentCategory")
-                        .WithMany("categoryItems")
-                        .HasForeignKey("ParentCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Category");
 
                     b.Navigation("CategoryItemImage");
-
-                    b.Navigation("ParentCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

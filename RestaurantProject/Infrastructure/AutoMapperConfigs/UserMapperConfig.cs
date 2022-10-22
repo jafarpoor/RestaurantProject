@@ -16,7 +16,6 @@ namespace Infrastructure.AutoMapperConfigs
         public UserMapperConfig()
         {
             CreateMap<RegisterDataModel, User>().ReverseMap();
-            CreateMap<List<ListCategoryDataModel>, Category>().ReverseMap();
             CreateMap<User , EditUserDataModel>().ReverseMap();
             CreateMap<User, ListUsersDataModel>();
         }

@@ -15,13 +15,13 @@ namespace Domain.Categories
         [Required]
         public string Name { get; set; }
         [Required]
-        public Category ParentCategory { get; set; }
-        public int ParentId { get; set; }
+        public Category Category { get; set; }
+        public int CategoryId { get; set; }
         public string Note { get; set; }
         //public int AvailableStock { get; set; }
         [Required]
         public Int64 Price { get; set; }
-        public int DiscountPercentage { get; set; }
+        public int? DiscountPercentage { get; set; }
         public CategoryItemImage CategoryItemImage { get; set; }
 
         public int CategoryItemImageId { get; set; }

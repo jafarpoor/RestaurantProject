@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rGjhkm8ErdpENv9QWlJvhUZw1uog+5EpyjEAk4ITK2Z0B7EEY5X+YtRqFGXPtQYuJ9qeBlDNvFy6l4Hi8b242w==",
+  "dgSpecHash": "+tSsJaNq07QQSVA+FB3Xhd+/4sn4b+RX9RnwY3HEQaVPjwvro5LLPektUCYhr72MwXJJcg8q4FTd4wblKqr7gg==",
   "success": true,
   "projectFilePath": "F:\\RestaurantProject\\RestaurantProject\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -58,6 +58,7 @@
     "C:\\Users\\jafapour\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\jafapour\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\jafapour\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\jafapour\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\jafapour\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\jafapour\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\jafapour\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
