@@ -30,6 +30,5 @@ namespace Common.Helper
             else
                 return null;
         }
-  
     }
 }

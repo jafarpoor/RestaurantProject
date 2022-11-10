@@ -223,9 +223,11 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.TagHelpers.output.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.RazorCoreGenerate.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Catalog\Index.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Basket\ShowBasketItem.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\Basket\Basket.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\MenuItemComonent\MenuItemComonent.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -240,3 +242,4 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs

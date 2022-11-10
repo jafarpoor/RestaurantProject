@@ -27,7 +27,9 @@ namespace Application.Categories.Queries
                            .Include(p=>p.CategoryItemImage)
                            .Where(p => p.CategoryId == ParentId).ToList();
 
-            //if()
+           if(Result ==null)
+                throw new Exception(Messages.NotFund);
+
             List<ListCategoryItemDataModel> modelList = new List<ListCategoryItemDataModel>();
             foreach (var item in Result)
             {

@@ -1,5 +1,7 @@
+using Application.Baskets.FacadePattern;
 using Application.Categories.FacadePattern;
 using Application.Interfaces;
+using Application.Interfaces.Baskets;
 using Application.Interfaces.Categories;
 using Application.UriComposer;
 using Application.Users.FacadePattern;
@@ -8,8 +10,10 @@ using Domain.Users;
 using Infrastructure.Api.ImageApi;
 using Infrastructure.AutoMapperConfigs;
 using Infrastructure.IdentityConfigs;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -47,11 +51,15 @@ namespace EndPoint.Site
             #endregion
 
             services.AddIdentityConfig(Configuration);
-
+            services.Configure<SecurityStampValidatorOptions>(options =>
+            {
+                options.ValidationInterval = TimeSpan.FromDays(360);
+            });
 
             //Facade
             services.AddScoped<IUsers, UserFacade>();
             services.AddTransient<ICategory, CategoryFacade>();
+            services.AddTransient<IBasket,BasketFacade>();
 
             //public
             services.AddTransient<IUriComposerService, UriComposerService>();
@@ -61,6 +69,7 @@ namespace EndPoint.Site
 
             //Mapper
             services.AddAutoMapper(typeof(UserMapperConfig));
+            services.AddAutoMapper(typeof(BasketMapperConfig));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +92,6 @@ namespace EndPoint.Site
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

@@ -78,7 +78,6 @@ namespace EndPoint.Admin.Controllers
         [HttpPost]
         public IActionResult AddCategoryItem(AddCategoryItemViewModel model)
         {
-
             if (!ModelState.IsValid)
                 return BadRequest();
             List<AddNewCategoryItemImageDataModel> images = new List<AddNewCategoryItemImageDataModel>();
@@ -89,7 +88,6 @@ namespace EndPoint.Admin.Controllers
                 var MyAddNewCategoryItemImageDataModel = new AddNewCategoryItemImageDataModel { Src = result };
                 model.addCategoryItemDataModel.addNewCatalogItemImageDataModel = MyAddNewCategoryItemImageDataModel;
             }
-
             return Json(_category.addCategoryItemService.AddCaregoryItem(model.addCategoryItemDataModel));
         }
     }

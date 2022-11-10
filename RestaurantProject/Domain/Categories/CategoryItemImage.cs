@@ -13,7 +13,7 @@ namespace Domain.Categories
     {
         public int Id { get; set; }
         public string Src { get; set; }
-        public CategoryItem CatalogItem { get; set; }
+        public CategoryItem CategoryItem { get; set; }
         public int CatlogItemId { get; set; }
     }
 }

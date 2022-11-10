@@ -208,6 +208,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Persisten
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Application.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Common.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Domain.pdb
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.GeneratedMSBuildEditorConfig.editorconfig
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfo.cs
@@ -243,4 +244,3 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\ref\EndPoint.Admin.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.genruntimeconfig.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache

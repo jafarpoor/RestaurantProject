@@ -62,11 +62,16 @@
                     <div class="user-items">
                         <div class="user-item account">
                             <!-- <a href="#" class="btn-auth">
-                        <i class="fal fa-user-circle"></i>
-                        ورود و عضویت
-                    </a> -->
+        <i class="fal fa-user-circle"></i>
+        ورود و عضویت
+    </a> -->
+
+                           @* @await Component.InvokeAsync("Basket")*@
                             <a href="#">
-                                نام کاربر
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    @User.Identity.Name
+                                }
                                 <i class="fad fa-chevron-down text-sm mr-1"></i>
                             </a>
                             <ul class="dropdown--wrapper">

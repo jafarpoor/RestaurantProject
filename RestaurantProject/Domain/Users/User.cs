@@ -17,7 +17,6 @@ namespace Domain.Users
         [Required]
         public string LastName { get; set; }
 
-        [Required]
         public string Address { get; set; }
     }
 }

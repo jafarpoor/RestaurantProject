@@ -18,17 +18,17 @@ namespace Application.Categories.DTO
         public Int64 Price { get; set; }
         public int? DiscountPercentage { get; set; }
         public string SrcImage { get; set; }
-        public double? TotlalPrice
-        {
-            get
-            {
-                if (DiscountPercentage != null)
-                {
-                    return ((Price * DiscountPercentage) / 100);
-                }
+        //public double? TotlalPrice
+        //{
+        //    get
+        //    {
+        //        if (DiscountPercentage != null)
+        //        {
+        //            return ((Price * DiscountPercentage) / 100);
+        //        }
 
-                else return null;
-            }
-        }
+        //        else return null;
+        //    }
+        //}
 }
 }

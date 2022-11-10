@@ -1,5 +1,6 @@
 ﻿using Application.Categories.DTO;
 using Application.Interfaces;
+using Application.Interfaces.Categories;
 using AutoMapper;
 using Common.Helper;
 using System;
@@ -34,17 +35,7 @@ namespace Application.Categories.Queries
                     };
                     listCategoryDataModels.Add(model);
                 }
-                return (listCategoryDataModels);
-                
-                //if ()
-                //{
-
-                //}
-
-                //else
-                //{
-                        // داده ای وجود ندارد
-                //}
+                return (listCategoryDataModels);              
             }
             catch (Exception)
             {

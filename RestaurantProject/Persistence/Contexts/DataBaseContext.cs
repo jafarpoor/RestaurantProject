@@ -1,6 +1,8 @@
 ﻿using Application.Interfaces;
 using Domain.Attributes;
+using Domain.Baskets;
 using Domain.Categories;
+using Domain.Orders;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -23,7 +25,13 @@ namespace Persistence.Contexts
 
          public DbSet<Category> Categories { get; set; }
          public  DbSet<CategoryItem> CategoryItems { get; set; }
-         public  DbSet<CategoryItemImage> CatalogItemImages { get; set; }
+         public  DbSet<CategoryItemImage> CategoryItemImages { get; set; }
+         public  DbSet<Basket> Baskets { get; set; }
+         public  DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.HasDefaultSchema("dbo");

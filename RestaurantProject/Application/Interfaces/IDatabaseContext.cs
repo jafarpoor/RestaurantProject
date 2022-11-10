@@ -1,5 +1,7 @@
 ﻿
+using Domain.Baskets;
 using Domain.Categories;
+using Domain.Orders;
 using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,7 +18,11 @@ namespace Application.Interfaces
         DbSet<User> Users { get; set; }
         DbSet<Category> Categories { get; set; }
         DbSet<CategoryItem> CategoryItems { get; set; }
-        DbSet<CategoryItemImage> CatalogItemImages { get; set; }
+        DbSet<CategoryItemImage> CategoryItemImages { get; set; }
+        DbSet<Basket> Baskets { get; set; }
+        DbSet<BasketItem> BasketItems { get; set; }
+        DbSet<Order> Orders { get; set; }
+        DbSet<OrderItem> OrderItems { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
 

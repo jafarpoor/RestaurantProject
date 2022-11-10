@@ -9,6 +9,7 @@ F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\bin\Debug\net5.0\ref\
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\bin\Debug\net5.0\Endpoint.StaticFile.pdb
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\bin\Debug\net5.0\Endpoint.StaticFile.Views.dll
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\bin\Debug\net5.0\Endpoint.StaticFile.Views.pdb
+F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\obj\Debug\net5.0\Endpoint.StaticFile.csproj.AssemblyReference.cache
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\obj\Debug\net5.0\Endpoint.StaticFile.GeneratedMSBuildEditorConfig.editorconfig
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\obj\Debug\net5.0\Endpoint.StaticFile.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\Endpoint.StaticFile\obj\Debug\net5.0\Endpoint.StaticFile.AssemblyInfo.cs

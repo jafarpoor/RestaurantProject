@@ -9,8 +9,24 @@
         {
             <li>
 
-                <a asp-controller="Catalog" asp-action="Index" asp-route-parentId=@item.Id><i class="fad fa-seedling text-warning"></i>@item.Name</a>
+                <a asp-controller="Category" asp-action="Index" asp-route-parentId=@item.Id><i class="fad fa-seedling text-warning"></i>@item.Name</a>
             </li>
         }
     }
+
+    <li>
+        <a asp-controller="Basket" asp-action="ShowBasketItem" class=" justify-content-center  text-white border-info bg-warning">
+
+            ادامه خرید
+        </a>
+    </li>
+
+    <li>
+        <a asp-controller="Account" asp-action="Register" class=" justify-content-center  text-white border-info bg-warning">
+
+          ورود / ثبت نام
+        </a>
+    </li>
+
+
 </ul>

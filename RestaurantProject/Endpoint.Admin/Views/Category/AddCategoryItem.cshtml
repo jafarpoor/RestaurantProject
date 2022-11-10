@@ -122,7 +122,6 @@
             addCategoryItemDataModelData.append('addCategoryItemDataModel.Price', $("#Price").val());
             addCategoryItemDataModelData.append('addCategoryItemDataModel.CategoryId', $('#Category').find('option:selected').val());
 
-            //دریافت عکس های انتخاب شده توسط کاربر و قرار دادن عکس ها در متغیر data
             var catalogImages = document.getElementById("Images");
             if (catalogImages.files.length > 0) {
                 addCategoryItemDataModelData.append('Files', catalogImages.files[0]);
