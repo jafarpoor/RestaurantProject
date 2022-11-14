@@ -12,14 +12,14 @@ namespace Domain.Orders
     public class Order
     {
         public int Id { get; set; }
-        public string UserId { get; private set; }
-        public DateTime OrderDate { get; private set; } = DateTime.Now;
+        public string UserId { get;  set; }
+        public DateTime OrderDate { get;  set; } = DateTime.Now;
         [NotMapped]
-        public Address Address { get; private set; }
-        public PaymentMethod PaymentMethod { get; private set; }
-        public PaymentStatus PaymentStatus { get; private set; }
-        public OrderStatus OrderStatus { get; private set; }
-        private readonly List<OrderItem> OrderItems = new List<OrderItem>();
+        public Address Address { get; set; }
+        public PaymentMethod PaymentMethod { get;  set; }
+        public PaymentStatus PaymentStatus { get;  set; }
+        public OrderStatus OrderStatus { get;  set; }
+        public  List<OrderItem> OrderItems = new List<OrderItem>();
 
 
     

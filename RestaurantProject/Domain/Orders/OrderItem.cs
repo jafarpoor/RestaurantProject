@@ -13,10 +13,10 @@ namespace Domain.Orders
     {
         public int Id { get; set; }
         public CategoryItem CateoryItem { get; set; }
-        public int CatalogItemId { get; private set; }
-        public string ProductName { get; private set; }
-        public string PictureUri { get; private set; }
-        public int UnitPrice { get; private set; }
-        public int Units { get; private set; }
+        public int CategoryItemId { get;  set; }
+        public string ProductName { get;  set; }
+        public string PictureUri { get;  set; }
+        public long UnitPrice { get;  set; }
+        public int Units { get;  set; }
     }
 }

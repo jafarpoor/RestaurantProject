@@ -21,8 +21,9 @@ namespace Application.Interfaces
         DbSet<CategoryItemImage> CategoryItemImages { get; set; }
         DbSet<Basket> Baskets { get; set; }
         DbSet<BasketItem> BasketItems { get; set; }
-        DbSet<Order> Orders { get; set; }
-        DbSet<OrderItem> OrderItems { get; set; }
+         DbSet<Domain.Orders.Order> Orders { get; set; }
+         DbSet<OrderItem> OrderItems { get; set; }
+        DbSet<UserAddress> UserAddresses { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
 
