@@ -72,54 +72,32 @@
                                 {
                                     @User.Identity.Name
                                 }
-                                <i class="fad fa-chevron-down text-sm mr-1"></i>
+                                else
+                                {
+                                    <span> نام کاربر</span>
+                                }
+                             <i class="fad fa-chevron-down text-sm mr-1"></i>
                             </a>
                             <ul class="dropdown--wrapper">
-                                <li class="header-profile-dropdown-account-container">
-                                    <a href="#" class="d-block">
-                                        <span class="header-profile-dropdown-user">
-                                            <span class="header-profile-dropdown-user-img">
-                                                <img src="~/Theme/assets/images/avatar/avatar.png">
-                                            </span>
-                                            <span class="header-profile-dropdown-user-info">
-                                                <p class="header-profile-dropdown-user-name">
-                                                    جلال بهرامی راد
-                                                </p>
-                                                <span class="header-profile-dropdown-user-profile-link">
-                                                    مشاهده حساب
-                                                    کاربری
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <span class="header-profile-dropdown-account">
-                                            <span class="header-profile-dropdown-account-item">
-                                                <span class="header-profile-dropdown-account-item-title">اعتبار</span>
-                                                <span class="header-profile-dropdown-account-item-amount">
-                                                    <span class="header-profile-dropdown-account-item-amount-number">7,500,000</span>
-                                                    تومان
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="dropdown--btn-primary">وارد شوید</a>
-                                </li>
-                                <li>
-                                    <span>کاربر جدید هستید؟</span>
-                                    <a href="#" class="border-bottom-dt">ثبت نام</a>
-                                </li>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a asp-controller="Account" asp-action="Login" class="dropdown--btn-primary">وارد شوید</a>
+                                    </li>
+                                    <li>
+                                        <span>کاربر جدید هستید؟</span>
+                                        <a asp-controller="Account" asp-action="Register" class="border-bottom-dt">ثبت نام</a>
+                                    </li>
+                                }
 
-                                <li>
-                                    <a href="#">
-                                        پروفایل
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        پیگیری سفارش
-                                    </a>
-                                </li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a asp-area="Customers" asp-controller="Customer" asp-action="Index">
+                                            پروفایل
+                                        </a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>

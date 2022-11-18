@@ -15,7 +15,7 @@ namespace Application.Categories.DTO
         [DisplayName("توضیحات")]
         public string Note { get; set; }
         [DisplayName("قیمت")]
-        public Int64 Price { get; set; }
+        public int Price { get; set; }
         public int? DiscountPercentage { get; set; }
         public string SrcImage { get; set; }
         //public double? TotlalPrice

@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Categories.Commands
+namespace Application.Orders.Commands
 {
    public class CreatOrderService : ICreatOrderService
     {

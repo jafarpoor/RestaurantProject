@@ -20,7 +20,7 @@ namespace Domain.Categories
         public string Note { get; set; }
         //public int AvailableStock { get; set; }
         [Required]
-        public Int64 Price { get; set; }
+        public int Price { get; set; }
         public int? DiscountPercentage { get; set; }
         public CategoryItemImage CategoryItemImage { get; set; }
 

@@ -16,7 +16,7 @@ namespace Domain.Orders
         public int CategoryItemId { get;  set; }
         public string ProductName { get;  set; }
         public string PictureUri { get;  set; }
-        public long UnitPrice { get;  set; }
+        public int UnitPrice { get;  set; }
         public int Units { get;  set; }
     }
 }

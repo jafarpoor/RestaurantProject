@@ -3,6 +3,7 @@ using Domain.Attributes;
 using Domain.Baskets;
 using Domain.Categories;
 using Domain.Orders;
+using Domain.Payments;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -23,15 +24,15 @@ namespace Persistence.Contexts
 
         }
 
-         public DbSet<Category> Categories { get; set; }
-         public  DbSet<CategoryItem> CategoryItems { get; set; }
-         public  DbSet<CategoryItemImage> CategoryItemImages { get; set; }
-         public  DbSet<Basket> Baskets { get; set; }
-         public  DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryItem> CategoryItems { get; set; }
+        public DbSet<CategoryItemImage> CategoryItemImages { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems  { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<UserAddress> UserAddresses { get; set; }
-
+        public DbSet<Payment> Payments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -71,7 +72,7 @@ namespace Persistence.Contexts
                     var updated = entityType.FindProperty("UpdateTime");
                     var RemoveTime = entityType.FindProperty("RemoveTime");
 
-                    if(item.State == EntityState.Added && inserted != null)
+                    if (item.State == EntityState.Added && inserted != null)
                         item.Property("InsertTime").CurrentValue = DateTime.Now;
                     if (item.State == EntityState.Modified && updated != null)
                         item.Property("UpdateTime").CurrentValue = DateTime.Now;

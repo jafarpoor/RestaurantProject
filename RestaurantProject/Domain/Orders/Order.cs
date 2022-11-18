@@ -19,10 +19,17 @@ namespace Domain.Orders
         public PaymentMethod PaymentMethod { get;  set; }
         public PaymentStatus PaymentStatus { get;  set; }
         public OrderStatus OrderStatus { get;  set; }
-        public  List<OrderItem> OrderItems = new List<OrderItem>();
+        public List<OrderItem> OrderItems { get; set; }
 
 
-    
+        public int TotalPrice()
+        {
+            int totalPrice = OrderItems.Sum(p => p.UnitPrice * p.Units);
+            //if (DiscountAmount != null)
+            //    totalPrice -= AppliedDiscount.GetDiscountAmount(totalPrice);
+            return totalPrice;
+        }
+
         /// <summary>
         /// پرداخت انجام شد
         /// </summary>

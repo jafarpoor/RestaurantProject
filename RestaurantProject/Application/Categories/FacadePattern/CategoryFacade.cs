@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Categories.FacadePattern
 {
-    public class CategoryFacade : ICategory
+    public class CategoryFacade : ICategoryFacade
     {
         private readonly IHostingEnvironment _environment;
         private readonly IDatabaseContext _context;

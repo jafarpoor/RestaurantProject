@@ -14,8 +14,8 @@ namespace EndPoint.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly IImageUploadService _imageUploadService;
-        private readonly ICategory _category;
-        public CategoryController(ICategory category , IImageUploadService imageUploadService)
+        private readonly ICategoryFacade _category;
+        public CategoryController(ICategoryFacade category , IImageUploadService imageUploadService)
         {
             _category = category;
             _imageUploadService = imageUploadService;

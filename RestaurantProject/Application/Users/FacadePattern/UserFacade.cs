@@ -1,7 +1,9 @@
 ﻿using Application.Interfaces;
 using Application.Interfaces.Users;
 using Application.Users.Commands.AddUser;
+using Application.Users.Commands.AddUserAddress;
 using Application.Users.Commands.EditUser;
+using Application.Users.Commands.EditUserAddress;
 using Application.Users.Queries;
 using AutoMapper;
 using Domain.Users;
@@ -15,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Application.Users.FacadePattern
 {
-    public class UserFacade : IUsers
+    public class UserFacade : IUserFacade
     {
         private readonly IHostingEnvironment _environment;
         private readonly UserManager<User> _userManager;
@@ -56,6 +58,35 @@ namespace Application.Users.FacadePattern
             get
             {
                 return _editUser = _editUser ?? new EditUserService(_context,_mapper ,_userManager);
+            }
+        }
+
+
+        private IGetUserAddressService _getUserAddressService;
+        public IGetUserAddressService getUserAddressService
+        {
+            get
+            {
+                return _getUserAddressService = _getUserAddressService ?? new GetUserAddressService(_context ,_mapper);
+            }
+        }
+
+        private IAddUserAddressService _addUserAddressService;
+
+        public IAddUserAddressService addUserAddressService
+        {
+            get
+            {
+                return _addUserAddressService = _addUserAddressService ?? new AddUserAddressService(_context , _mapper);
+            }
+        }
+
+        private IEditUserAddressService _editUserAddressService;
+        public IEditUserAddressService editUserAddressService
+        {
+            get
+            {
+                return _editUserAddressService = _editUserAddressService ?? new EditUserAddressService(_context , _mapper);
             }
         }
     }

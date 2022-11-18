@@ -2,6 +2,7 @@
 using Application.Users.DTO;
 using AutoMapper;
 using Domain.Categories;
+using Domain.Orders;
 using Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Infrastructure.AutoMapperConfigs
             CreateMap<RegisterDataModel, User>().ReverseMap();
             CreateMap<User , EditUserDataModel>().ReverseMap();
             CreateMap<User, ListUsersDataModel>();
+            CreateMap<UserAddress, GetUserAddressDataModel>().ReverseMap();
+            CreateMap<UserAddress, AddUserAddressDataModel>().ReverseMap();
+            CreateMap<UserAddress, EditUserAddressDataModel>().ReverseMap();
+            CreateMap<Address, UserAddress>().ReverseMap();
         }
     }
        

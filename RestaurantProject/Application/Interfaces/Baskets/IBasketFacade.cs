@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Interfaces.Order
+namespace Application.Interfaces.Baskets
 {
-   public interface IOrders
+  public  interface IBasketFacade
     {
-        ICreatOrderService creatOrderService { get; }
+        IBasketService basketService { get; }
     }
 }

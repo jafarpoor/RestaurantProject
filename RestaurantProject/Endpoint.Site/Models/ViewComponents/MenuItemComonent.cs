@@ -10,8 +10,8 @@ namespace EndPoint.Site.Models.ViewComponents
 {
     public class MenuItemComonent : ViewComponent
     {
-        private readonly ICategory _categoy;
-        public MenuItemComonent(ICategory categoy)
+        private readonly ICategoryFacade _categoy;
+        public MenuItemComonent(ICategoryFacade categoy)
         {
             _categoy = categoy;
         }

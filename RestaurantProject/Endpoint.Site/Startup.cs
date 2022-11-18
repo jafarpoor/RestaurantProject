@@ -3,6 +3,10 @@ using Application.Categories.FacadePattern;
 using Application.Interfaces;
 using Application.Interfaces.Baskets;
 using Application.Interfaces.Categories;
+using Application.Interfaces.Order;
+using Application.Interfaces.Payments;
+using Application.Orders.FacadePattern;
+using Application.Payments.FacadePattern;
 using Application.UriComposer;
 using Application.Users.FacadePattern;
 using AutoMapper;
@@ -40,7 +44,7 @@ namespace EndPoint.Site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-       
+
             services.AddControllersWithViews();
 
             #region connectionString
@@ -57,9 +61,11 @@ namespace EndPoint.Site
             });
 
             //Facade
-            services.AddScoped<IUsers, UserFacade>();
-            services.AddTransient<ICategory, CategoryFacade>();
-            services.AddTransient<IBasket,BasketFacade>();
+            services.AddScoped<IUserFacade, UserFacade>();
+            services.AddTransient<ICategoryFacade, CategoryFacade>();
+            services.AddTransient<IBasketFacade, BasketFacade>();
+            services.AddTransient<IOrderFacade, OrderFacade>();
+            services.AddTransient<IPaymentFacade, PaymentFacade>();
 
             //public
             services.AddTransient<IUriComposerService, UriComposerService>();
@@ -94,6 +100,11 @@ namespace EndPoint.Site
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                 name: "areas",
+                 pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+
+                 );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -17,12 +17,12 @@ namespace EndPoint.Site.Controllers
     public class CategoryController : Controller
     {
         private readonly IImageUploadService _imageUploadService;
-        private readonly ICategory _category;
-        private readonly IBasket _basket;
+        private readonly ICategoryFacade _category;
+        private readonly IBasketFacade _basket;
         private readonly SignInManager<User> _signInManager;
         private string UserId = null;
 
-        public CategoryController(IImageUploadService  imageUploadService , ICategory category , IBasket basket , SignInManager<User> signInManager)
+        public CategoryController(IImageUploadService  imageUploadService , ICategoryFacade category , IBasketFacade basket , SignInManager<User> signInManager)
         {
             _imageUploadService = imageUploadService;
             _category = category;

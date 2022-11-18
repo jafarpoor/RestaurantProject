@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Application.Baskets.FacadePattern
 {
-  public  class BasketFacade : IBasket
+  public  class BasketFacade : IBasketFacade
     {
         private readonly IDatabaseContext _dataBaseContxt;
         private readonly IUriComposerService _uriComposerService;

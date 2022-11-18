@@ -15,9 +15,9 @@ namespace EndPoint.Admin.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IUsers _userManager;
+        private readonly IUserFacade _userManager;
 
-        public UserController(IUsers userManager)
+        public UserController(IUserFacade userManager)
         {
             _userManager = userManager;
         }

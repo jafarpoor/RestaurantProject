@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    public interface IUsers
+    public interface IUserFacade
     {
         IAddUserService addUserService { get; }
         IGetUsersService getUsers{get;}
         IEditUserService editUser { get; }
+        IGetUserAddressService getUserAddressService { get; }
+        IAddUserAddressService addUserAddressService { get; }
+        IEditUserAddressService editUserAddressService { get; }
     }
 }

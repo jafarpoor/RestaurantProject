@@ -1,7 +1,12 @@
 ﻿using Application.Baskets.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Baskets;
+using Application.Interfaces.Order;
+using Application.Interfaces.Payments;
+using Domain.Orders;
 using Domain.Users;
 using EndPoint.Site.Utilities;
+using EndPoint.Site.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,13 +21,23 @@ namespace EndPoint.Site.Controllers
     public class BasketController : Controller
     {
         private readonly SignInManager<User> _signInManager;
-        private readonly IBasket _basket;
+        private readonly IBasketFacade _basket;
+        private readonly IOrderFacade _OrderService;
+        private readonly IUserFacade _UserService;
+        private readonly IPaymentFacade _paymentService;
         private string UserId = null;
        
-        public BasketController(IBasket basket , SignInManager<User> signInManager)
+        public BasketController(IBasketFacade basket , 
+                                SignInManager<User> signInManager ,
+                                IOrderFacade OrderService,
+                                IUserFacade UserService ,
+                                IPaymentFacade paymentService)
         {
             _basket = basket;
             _signInManager = signInManager;
+            _OrderService = OrderService;
+            _UserService = UserService;
+            _paymentService = paymentService;
         }
 
         [HttpPost]
@@ -79,6 +94,38 @@ namespace EndPoint.Site.Controllers
         {
             _basket.basketService.RemoveBasketItem(ItemId);
             return RedirectToAction("ShowBasketItem");
+        }
+
+
+        [Authorize]
+        public IActionResult ShippingPayment()
+        {
+            ShippingPaymentViewModel model = new ShippingPaymentViewModel();
+            var userId = ClaimUtility.GetUserId(User);
+            model.Basket = _basket.basketService.GetBasketByBuyerId(userId);
+            model.UserAddresses = _UserService.getUserAddressService.GetUserAddress(userId);
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult ShippingPayment(int Address, PaymentMethod PaymentMethod)
+        {
+            var userId = ClaimUtility.GetUserId(User);
+            var basket = _basket.basketService.GetBasketByBuyerId(userId);
+            var Order = _OrderService.creatOrderService.CreatOrder(basket.Id, Address, PaymentMethod);
+            if (PaymentMethod == PaymentMethod.OnlinePaymnt)
+            {
+                //ثبت پرداخت
+                var payment = _paymentService.creatPayment.PayForOrder(Order);
+                //ارسال به درگاه پرداخت
+                 return RedirectToAction("Index", "Pay", new { PaymentId = payment.PaymentId });
+            }
+            else
+            {
+                //برو به صفحه سفارشات من
+                return RedirectToAction("Index", "Orders", new { area = "customers" });
+            }
         }
     }
 }

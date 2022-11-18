@@ -1,6 +1,7 @@
 ﻿using Application.Categories.Commands;
 using Application.Interfaces;
 using Application.Interfaces.Order;
+using Application.Orders.Commands;
 using Application.UriComposer;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Orders.FacadePattern
 {
-  public  class OrderFacade :IOrders
+  public  class OrderFacade : IOrderFacade
     {
         private readonly IHostingEnvironment _environment;
         private readonly IDatabaseContext _context;

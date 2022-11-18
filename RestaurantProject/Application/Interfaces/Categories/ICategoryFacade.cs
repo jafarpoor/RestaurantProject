@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces.Categories
 {
-    public interface ICategory
+    public interface ICategoryFacade
     {
         IAddCategoryService addCategory { get; }
         IGetListCategoyService getListCategoyService { get; }

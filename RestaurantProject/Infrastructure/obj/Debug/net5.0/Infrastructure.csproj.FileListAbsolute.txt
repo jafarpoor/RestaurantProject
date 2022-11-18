@@ -27,7 +27,7 @@ F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastru
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete

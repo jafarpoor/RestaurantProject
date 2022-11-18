@@ -17,13 +17,13 @@ namespace EndPoint.Site.Controllers
     public class AccountController : Controller
     {
 
-        private readonly IUsers _userManager;
+        private readonly IUserFacade _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManagerIdentity;
-        private readonly IBasket _basket;
-        public AccountController(IUsers userManager , SignInManager<User> signInManager,
+        private readonly IBasketFacade _basket;
+        public AccountController(IUserFacade userManager , SignInManager<User> signInManager,
             UserManager<User> userManagerIdentity ,
-            IBasket basket)
+            IBasketFacade basket)
         {
             _signInManager = signInManager;
             _userManager = userManager;

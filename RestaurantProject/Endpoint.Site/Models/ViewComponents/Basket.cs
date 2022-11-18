@@ -9,9 +9,9 @@ namespace EndPoint.Site.Models.ViewComponents
 {
     public class Basket : ViewComponent
     {
-        private readonly IBasket _basket;
+        private readonly IBasketFacade _basket;
         string UserId = null;
-        public Basket(IBasket basket )
+        public Basket(IBasketFacade basket )
         {
             _basket = basket;
         }

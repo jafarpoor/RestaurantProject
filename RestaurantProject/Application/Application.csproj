@@ -19,8 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Baskets\Queries\" />
-    <Folder Include="Orders\Commands\" />
-    <Folder Include="Orders\DTO\" />
     <Folder Include="Orders\Queries\" />
   </ItemGroup>
 

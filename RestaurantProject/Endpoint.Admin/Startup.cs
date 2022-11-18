@@ -47,8 +47,8 @@ namespace EndPoint.Admin
 
 
             //Facade
-            services.AddScoped<IUsers, UserFacade>();
-            services.AddTransient<ICategory, CategoryFacade>();
+            services.AddScoped<IUserFacade, UserFacade>();
+            services.AddTransient<ICategoryFacade, CategoryFacade>();
 
 
             //public
