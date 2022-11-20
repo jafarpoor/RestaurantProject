@@ -127,5 +127,10 @@ namespace EndPoint.Site.Controllers
                 return RedirectToAction("Index", "Orders", new { area = "customers" });
             }
         }
+
+        public IActionResult CheckOut(bool ResultPay)
+        {
+                return View(ResultPay);
+        }
     }
 }

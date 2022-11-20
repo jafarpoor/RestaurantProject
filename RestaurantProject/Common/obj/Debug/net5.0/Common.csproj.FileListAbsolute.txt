@@ -22,3 +22,15 @@ F:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.csproj.Cor
 F:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.dll
 F:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\ref\Common.dll
 F:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.pdb
+E:\RestaurantProject\RestaurantProject\Common\bin\Debug\net5.0\Common.deps.json
+E:\RestaurantProject\RestaurantProject\Common\bin\Debug\net5.0\Common.dll
+E:\RestaurantProject\RestaurantProject\Common\bin\Debug\net5.0\ref\Common.dll
+E:\RestaurantProject\RestaurantProject\Common\bin\Debug\net5.0\Common.pdb
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.csproj.AssemblyReference.cache
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.AssemblyInfoInputs.cache
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.AssemblyInfo.cs
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.csproj.CoreCompileInputs.cache
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.dll
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\ref\Common.dll
+E:\RestaurantProject\RestaurantProject\Common\obj\Debug\net5.0\Common.pdb

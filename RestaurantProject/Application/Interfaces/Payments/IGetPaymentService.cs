@@ -10,5 +10,6 @@ namespace Application.Interfaces.Payments
   public  interface IGetPaymentService
     {
         PaymentDataModel GetPaymentById(Guid Id);
+        bool VerifyPayment(Guid Id, string Authority, long RefId);
     }
 }

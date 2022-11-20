@@ -13,5 +13,11 @@ namespace EndPoint.Site.Areas.Customers.Controllers
         {
             return View();
         }
+
+        public IActionResult Orders()
+        {
+            //پنل مشتری برای سفارش
+            return View();
+        }
     }
 }
