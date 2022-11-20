@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xHiFvIpseGSruXyBpkXKO+ZleJUMyWO+++0GYsPsXLJ+p3mv+J6IjzcktuV8Q5KvINGNr6sNCxi/38QUwXweFg==",
+  "dgSpecHash": "XIaf0rEXsX9j7ZBvX3RbUy1S4eSIwx3cSWnOwWHmPAyLimqjSGeBXm8pY/7oI455NSQl7ALlj7NNmg0S5bcF4w==",
   "success": true,
-  "projectFilePath": "E:\\RestaurantProject\\RestaurantProject\\Endpoint.StaticFile\\Endpoint.StaticFile.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\jafarpoor-f\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512",
-    "C:\\Users\\jafarpoor-f\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\jafarpoor-f\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\jafarpoor-f\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "F:\\RestaurantProject\\RestaurantProject\\Endpoint.StaticFile\\Endpoint.StaticFile.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,16 +13,16 @@ namespace Domain.Orders
     {
         //test git
         public int Id { get; set; }
-        public string UserId { get;  set; }
-        public DateTime OrderDate { get;  set; } = DateTime.Now;
+        public string UserId { get; set; }
+        public DateTime OrderDate { get; set; } = DateTime.Now;
         [NotMapped]
         public Address Address { get; set; }
-        public PaymentMethod PaymentMethod { get;  set; }
-        public PaymentStatus PaymentStatus { get;  set; }
-        public OrderStatus OrderStatus { get;  set; }
+        public PaymentMethod PaymentMethod { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
+        public OrderStatus OrderStatus { get; set; }
         public List<OrderItem> OrderItems { get; set; }
-
-
+        public string OrderCode { get ; set;}
+  
         public int TotalPrice()
         {
             int totalPrice = OrderItems.Sum(p => p.UnitPrice * p.Units);

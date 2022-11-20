@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Baskets\Queries\" />
-    <Folder Include="Orders\Queries\" />
   </ItemGroup>
 
 </Project>

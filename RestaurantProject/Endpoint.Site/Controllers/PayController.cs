@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.Payments;
+﻿using Application.Interfaces.Order;
+using Application.Interfaces.Payments;
 using Domain.Payments;
 using Dto.Payment;
 using EndPoint.Site.Utilities;
@@ -25,7 +26,7 @@ namespace EndPoint.Site.Controllers
         private readonly Transactions _transactions;
         private readonly string MerchendId;
 
-        public PayController(IConfiguration configutation , IPaymentFacade paymentervice)
+        public PayController(IConfiguration configutation, IPaymentFacade paymentervice )
         {
             _configuration = configutation;
             _paymentervice = paymentervice;
@@ -45,7 +46,7 @@ namespace EndPoint.Site.Controllers
                 return BadRequest();
 
 
-            string callBackUrl = Url.Action(nameof(Verify), "pay", new { payment.Id }, protocol: Request.Scheme);
+            string callBackUrl = Url.Action(nameof(Verify), "pay", new { payment.Id  , payment.OrderId}, protocol: Request.Scheme);
 
             var reasultZarinpall = await _payment.Request(new DtoRequest
             {
@@ -60,52 +61,55 @@ namespace EndPoint.Site.Controllers
             return Redirect($"https://zarinpal.com/pg/StartPay/{reasultZarinpall.Authority}");
         }
 
-        public async Task<IActionResult> Verify(Guid Id, string Authority)
+        public async Task<IActionResult> Verify()
         {
-            string Status = HttpContext.Request.Query["Status"];
-            bool ResultPay = false;
-            if (Status != "" && Status.ToString().ToLower() == "ok"
-                && Authority != "")
-            {
-                var payment = _paymentervice.getPayment.GetPaymentById(Id);
-                if (payment == null)
-                {
-                    return NotFound();
-                }
+            //Guid Id,  , int OrderId ,string Authority
+            #region Code
+            //string Status = HttpContext.Request.Query["Status"];
+            //bool ResultPay = false;
+            //if (Status != "" && Status.ToString().ToLower() == "ok"
+            //    && Authority != "")
+            //{
+            //    var payment = _paymentervice.getPayment.GetPaymentById(Id);
+            //    if (payment == null)
+            //    {
+            //        return NotFound();
+            //    }
 
-                var client = new RestClient("https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json");
-                client.Timeout = -1;
-                var request = new RestRequest(Method.POST);
-                request.AddHeader("Content-Type", "application/json");
-                request.AddParameter("application/json", $"{{\"MerchantID\" :\"{MerchendId}\",\"Authority\":\"{Authority}\",\"Amount\":\"{payment.Amount}\"}}", ParameterType.RequestBody);
-                var response = client.Execute(request);
+            //    var client = new RestClient("https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json");
+            //    client.Timeout = -1;
+            //    var request = new RestRequest(Method.POST);
+            //    request.AddHeader("Content-Type", "application/json");
+            //    request.AddParameter("application/json", $"{{\"MerchantID\" :\"{MerchendId}\",\"Authority\":\"{Authority}\",\"Amount\":\"{payment.Amount}\"}}", ParameterType.RequestBody);
+            //    var response = client.Execute(request);
 
-                VerificationPayResultViewModel verification =
-                    JsonConvert.DeserializeObject<VerificationPayResultViewModel>(response.Content);
-               
-                if (verification.Status == 100)
-                {
-                    bool verifyResult = _paymentervice.getPayment.VerifyPayment(Id, Authority, verification.RefID);
-                    if (verifyResult)
-                    {
-                        return Redirect("/customers/orders");
-                    }
-                    else
-                    {
-                        TempData["message"] = "پرداخت انجام شد اما ثبت نشد";
-                        return RedirectToAction("checkout", "basket");
-                    }
-                }
-                else
-                {
-                    TempData["message"] = "پرداخت شما ناموفق بوده است . لطفا مجددا تلاش نمایید یا در صورت بروز مشکل با مدیریت سایت تماس بگیرید .";
-                    return RedirectToAction("checkout", "basket" , ResultPay);
-                }
+            //    VerificationPayResultViewModel verification =
+            //        JsonConvert.DeserializeObject<VerificationPayResultViewModel>(response.Content);
 
-            }
-            TempData["message"] = "پرداخت شما ناموفق بوده است .";
-            return RedirectToAction("checkout", "basket" , ResultPay);
+            //    if (verification.Status == 100)
+            //    {
+            //        bool verifyResult = _paymentervice.getPayment.VerifyPayment(Id, Authority, verification.RefID);
+            //        if (verifyResult)
+            //        {
+            //            return RedirectToAction("checkout", "basket", new { ResultPay = true , OrderID =OrderId  });
+            //        }
+            //        else
+            //        {
+            //            return RedirectToAction("checkout", "basket", new { ResultPay = false ,OrderID =OrderId  });
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return RedirectToAction("checkout", "basket", new { ResultPay = false ,OrderID =0 });
+            //    }
+
+            //}
+            //return RedirectToAction("checkout", "basket", new { ResultPay = false ,OrderID =0});
+            #endregion
+
+
+            return RedirectToAction("checkout", "basket", new { ResultPay  = true , OrderID =8}) ; 
         }
     }
-  }
+}
 

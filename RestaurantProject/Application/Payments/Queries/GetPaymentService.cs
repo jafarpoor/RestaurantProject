@@ -47,7 +47,8 @@ namespace Application.Payments.Queries
                 Email = user.Email,
                 Id = payment.Id,
                 PhoneNumber = user.PhoneNumber,
-                UserId = user.Id
+                UserId = user.Id ,
+                OrderId = payment.Order.Id
             };
         }
 
