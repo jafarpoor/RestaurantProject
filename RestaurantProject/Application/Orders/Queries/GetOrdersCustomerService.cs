@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.DTO;
+using Common.Helper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,19 +23,20 @@ namespace Application.Orders.Queries
         public List<ListOrdersCustomerDataModel> GetList(string UserId)
         {
 
-            //var Result = _context.Orders
-            //            .Include(p => p.OrderItems)
-            //            .Where(p => p.UserId == UserId)
-            //            .Select(p=> new ListOrdersCustomerDataModel
-            //            {
-            //                OrderCode = p.OrderCode, 
-            //                OrderStatus = p.OrderStatus. ,
-            //                PaymentAmount = p.Payment?.Amount? ?? p.Payment?.Amount ,
-            //                PaymentDataTime  = 
-            //            }).ToList();
+            var Result = _context.Payments
+                        .Include(p => p.Order)
+                        .Where(p => p.Order.UserId == UserId)
+                        .Select(p => new ListOrdersCustomerDataModel
+                        {
+                            OrderId = p.Order.Id ,
+                            PaymentAmount = p.Amount,
+                            OrderCode = p.Order.OrderCode,
+                            OrderStatus = p.Order.OrderStatusName,
+                            PaymentDataTime = ConvertDate.ConvertMiladiToShamsi(p.DatePay , "yyyy/MM/dd")
 
+                        }).ToList();
 
-            throw new NotImplementedException();
+            return Result;
         }
     }
 }

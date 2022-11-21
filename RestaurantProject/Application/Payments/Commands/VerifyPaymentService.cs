@@ -31,7 +31,6 @@ namespace Application.Payments.Commands
                     throw new Exception(Messages.NotFund);
 
                 payment.Order.PaymentDone();
-                payment.Order.Payment = payment;
                 payment.PaymentIsDone(Authority, RefId);
 
                 _context.SaveChanges();

@@ -4,6 +4,7 @@ using Domain.Payments;
 using Dto.Payment;
 using EndPoint.Site.Utilities;
 using EndPoint.Site.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -17,6 +18,7 @@ using Payment = ZarinPal.Class.Payment;
 
 namespace EndPoint.Site.Controllers
 {
+    [Authorize]
     public class PayController : Controller
     {
         private readonly IConfiguration _configuration;

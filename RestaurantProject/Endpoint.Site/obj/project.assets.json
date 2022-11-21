@@ -36,6 +36,15 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "MD.PersianDateTime.Core/2.3.5": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/MD.PersianDateTime.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/MD.PersianDateTime.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2456,6 +2465,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "MD.PersianDateTime.Core": "2.3.5",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.0"
         },
         "compile": {
@@ -2508,6 +2518,7 @@
           "Application": "1.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
         },
@@ -2564,6 +2575,19 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "MD.PersianDateTime.Core/2.3.5": {
+      "sha512": "YPhSKavxetpRQggt7Z9wnobz6NUtz6lwbw7P8EnzjC1w2/0d/2EQUdkdVBp7KMWOzXjlJMLp3Hj0v1me6cRDLg==",
+      "type": "package",
+      "path": "md.persiandatetime.core/2.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp2.0/MD.PersianDateTime.Core.dll",
+        "lib/netcoreapp2.0/MD.PersianDateTime.Core.xml",
+        "md.persiandatetime.core.2.3.5.nupkg.sha512",
+        "md.persiandatetime.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -8171,19 +8195,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jafarpoor-f\\.nuget\\packages\\": {}
+    "C:\\Users\\jafapour\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\EndPoint.Site.csproj",
+      "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\EndPoint.Site.csproj",
       "projectName": "EndPoint.Site",
-      "projectPath": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\EndPoint.Site.csproj",
-      "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-      "outputPath": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\obj\\",
+      "projectPath": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\EndPoint.Site.csproj",
+      "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+      "outputPath": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.Site\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8197,14 +8221,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
-              "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj"
+            "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
+              "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj"
             },
-            "E:\\RestaurantProject\\RestaurantProject\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Infrastructure\\Infrastructure.csproj"
+            "F:\\RestaurantProject\\RestaurantProject\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Infrastructure\\Infrastructure.csproj"
             },
-            "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
-              "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj"
+            "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
+              "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -8274,24 +8298,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -8300,7 +8306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

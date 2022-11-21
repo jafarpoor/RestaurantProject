@@ -25,10 +25,6 @@ namespace Domain.Orders
         public List<OrderItem> OrderItems { get; set; }
         public string OrderCode { get; set; }
 
-       public Payment Payment {get; set;}
-
-        public int PaymentId { get; set; }
-  
         public int TotalPrice()
         {
             int totalPrice = OrderItems.Sum(p => p.UnitPrice * p.Units);
@@ -69,6 +65,33 @@ namespace Domain.Orders
         public void OrderCancelled()
         {
             OrderStatus = OrderStatus.Cancelled;
+        }
+
+        public string OrderStatusName
+        {
+            get{
+                string Name = "";
+                switch ((int)OrderStatus)
+                {
+                    case 0:
+                        Name = " در حال پردازش";
+                        break;
+                    case 1:
+                        Name = "تحویل داده شد";
+                        break;
+                    case 2:
+                        Name = "مرجوعی";
+                        break;
+                    case 3:
+                        Name = "کنسل شد";
+                        break;
+                    default:
+                        Name = "";
+                        break;
+                }
+                return Name;
+            }
+            
         }
     }
 
@@ -117,4 +140,7 @@ namespace Domain.Orders
         /// </summary>
         Cancelled = 3,
     }
+
+
+
 }

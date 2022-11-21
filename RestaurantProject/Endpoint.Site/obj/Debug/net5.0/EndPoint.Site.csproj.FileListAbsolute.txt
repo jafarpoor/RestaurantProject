@@ -255,6 +255,8 @@ E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
+E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Orders.cshtml.g.cs
+E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Basket\CheckOut.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\appsettings.Development.json
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\appsettings.json
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\EndPoint.Site.exe
@@ -409,6 +411,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Area
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Address\EditUserAddress.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Address\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Index.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Orders.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Shared\_LayoutCustomerPanel.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\_ViewImports.cshtml.g.cs
@@ -436,5 +439,4 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
-E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Orders.cshtml.g.cs
-E:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Views\Basket\CheckOut.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\MD.PersianDateTime.Core.dll

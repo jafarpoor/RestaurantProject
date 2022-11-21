@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj": {}
+    "F:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj": {}
   },
   "projects": {
-    "E:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-        "outputPath": "E:\\RestaurantProject\\RestaurantProject\\Application\\obj\\",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj"
               },
-              "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
               }
             }
           }
@@ -78,40 +78,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-        "outputPath": "E:\\RestaurantProject\\RestaurantProject\\Common\\obj\\",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -137,6 +123,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MD.PersianDateTime.Core": {
+              "target": "Package",
+              "version": "[2.3.5, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -152,40 +142,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-        "outputPath": "E:\\RestaurantProject\\RestaurantProject\\Domain\\obj\\",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -234,40 +210,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj",
         "projectName": "EndPoint.IDP",
-        "projectPath": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj",
-        "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-        "outputPath": "E:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\obj\\",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\EndPoint.IDP.csproj",
+        "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\EndPoint.IDP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -281,11 +243,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
               },
-              "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -359,24 +321,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.12, 5.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -385,21 +329,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
+    "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\jafarpoor-f\\.nuget\\packages\\",
-        "outputPath": "E:\\RestaurantProject\\RestaurantProject\\Persistence\\obj\\",
+        "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\jafapour\\.nuget\\packages\\",
+        "outputPath": "F:\\RestaurantProject\\RestaurantProject\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jafarpoor-f\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jafapour\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -413,11 +357,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Application\\Application.csproj"
               },
-              "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
+              "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\RestaurantProject\\RestaurantProject\\Domain\\Domain.csproj"
               }
             }
           }
@@ -435,6 +379,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -467,26 +415,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
