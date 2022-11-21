@@ -5,7 +5,22 @@
       "ProjectGuid": "7335d593-34bf-4a2c-8ded-83dd66ce7d56",
       "DisplayName": "Domain",
       "ColorIndex": 0
+    },
+    "fd4a7a16-5cce-4f16-a831-14ece3a82820": {
+      "ProjectGuid": "fd4a7a16-5cce-4f16-a831-14ece3a82820",
+      "DisplayName": "EndPoint.Site",
+      "ColorIndex": 1
+    },
+    "2e4d83f1-5422-4fdc-bcc5-f09eb634c877": {
+      "ProjectGuid": "2e4d83f1-5422-4fdc-bcc5-f09eb634c877",
+      "DisplayName": "Application",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
