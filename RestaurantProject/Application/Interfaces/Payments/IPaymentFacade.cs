@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces.Payments
 {
-   public interface IPaymentFacade
+    public interface IPaymentFacade
     {
         ICreatPaymentService creatPayment { get; }
         IGetPaymentService getPayment { get; }
+        IVerifyPaymentService verifyPayment { get ;}
     }
 }

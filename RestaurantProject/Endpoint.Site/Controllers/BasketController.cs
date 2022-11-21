@@ -128,9 +128,12 @@ namespace EndPoint.Site.Controllers
             }
         }
 
-        public IActionResult CheckOut(bool ResultPay)
+        public IActionResult CheckOut(bool ResultPay , int OrderID )
         {
-                return View(ResultPay);
+            ViewBag.ResultPay = ResultPay;
+            if(OrderID !=0)
+            ViewBag.OrderCode = _OrderService.getOrderCoedService.GetCode(OrderID);
+                return View();
         }
     }
 }

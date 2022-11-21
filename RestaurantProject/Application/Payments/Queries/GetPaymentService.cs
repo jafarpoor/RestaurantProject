@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Application.Interfaces.Payments;
 using Application.Orders.DTO;
+using Application.Payments.DTO;
 using Common.Helper;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity;
@@ -47,33 +48,11 @@ namespace Application.Payments.Queries
                 Email = user.Email,
                 Id = payment.Id,
                 PhoneNumber = user.PhoneNumber,
-                UserId = user.Id
+                UserId = user.Id ,
+                OrderId = payment.Order.Id
             };
         }
 
-        public bool VerifyPayment(Guid Id, string Authority, long RefId)
-        {
-            try
-            {
-                var payment = _context.Payments
-                       .Include(p => p.Order)
-                       .SingleOrDefault(p => p.Id == Id);
 
-                if (payment == null)
-                    throw new Exception(Messages.NotFund);
-
-                payment.Order.PaymentDone();
-                payment.PaymentIsDone(Authority, RefId);
-
-                _context.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        
-        }
     }
 }

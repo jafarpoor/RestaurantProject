@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace Application.Payments.FacadePattern
 {
-   public class PaymentFacade :IPaymentFacade
+    public class PaymentFacade : IPaymentFacade
     {
         private readonly IDatabaseContext _context;
         private readonly UserManager<User> _userMager;
         private readonly IMapper _mapper;
 
-        public PaymentFacade(IDatabaseContext context , IMapper mapper , UserManager<User> userMager)
+        public PaymentFacade(IDatabaseContext context, IMapper mapper, UserManager<User> userMager)
         {
             _context = context;
             _mapper = mapper;
@@ -42,8 +42,20 @@ namespace Application.Payments.FacadePattern
         {
             get
             {
-                return _getPayment = _getPayment ?? new GetPaymentService(_context,_userMager);
+                return _getPayment = _getPayment ?? new GetPaymentService(_context, _userMager);
             }
+        }
+        private IVerifyPaymentService _verifyPaymentService;
+
+        public IVerifyPaymentService verifyPayment
+        {
+            get
+            {
+                return _verifyPaymentService = _verifyPaymentService  ?? new VerifyPaymentService(_context);
+
+
+            }
+ 
         }
     }
 }

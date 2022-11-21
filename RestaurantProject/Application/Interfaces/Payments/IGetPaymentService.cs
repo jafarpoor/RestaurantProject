@@ -1,4 +1,5 @@
 ﻿using Application.Orders.DTO;
+using Application.Payments.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Application.Interfaces.Payments
   public  interface IGetPaymentService
     {
         PaymentDataModel GetPaymentById(Guid Id);
-        bool VerifyPayment(Guid Id, string Authority, long RefId);
+       
     }
 }

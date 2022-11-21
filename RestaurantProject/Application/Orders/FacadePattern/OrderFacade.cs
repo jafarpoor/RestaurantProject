@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.Commands;
+using Application.Orders.Queries;
 using Application.UriComposer;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,24 @@ namespace Application.Orders.FacadePattern
             {
                return _creatOrderService = _creatOrderService ?? new CreatOrderService(_context , _uriComposerService ,_mapper);
                      
+            }
+        }
+
+        public IGetOrdersCustomerService _getOrdersCustomer;
+        public IGetOrdersCustomerService getOrdersCustomer
+        {
+            get
+            {
+                return _getOrdersCustomer = _getOrdersCustomer ?? new GetOrdersCustomerService(_context);
+            }
+        }
+
+        public IGetOrderCodeService _getOrderCodeService;
+        public IGetOrderCodeService getOrderCoedService
+        {
+            get
+            {
+                return _getOrderCodeService = _getOrderCodeService ?? new GetOrderCodeService(_context);
             }
         }
     }

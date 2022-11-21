@@ -64,8 +64,8 @@ namespace Application.Orders.Commands
                     UserId= basket.BuyerId ,
                     Address= address ,
                     PaymentMethod =paymentMethod ,
-                    OrderItems = orderItems
-                    
+                    OrderItems = orderItems ,
+                    OrderCode = CreatOrderCode.GetOrderCode()
                 };
 
                 _contetx.Orders.Add(order);

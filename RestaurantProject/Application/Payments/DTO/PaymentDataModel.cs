@@ -14,5 +14,6 @@ namespace Application.Payments.DTO
         public string Email { get; set; }
         public int Amount { get; set; }
         public string UserId { get; set; }
+        public int OrderId { get; set; }
     }
 }
