@@ -93,6 +93,21 @@ namespace Domain.Orders
             }
             
         }
+
+        public string PaymentMethodName
+        {
+            get
+            {
+                if (this.PaymentMethod == PaymentMethod.OnlinePaymnt)
+                    return "پرداخت آنلاین";
+                else if (this.PaymentMethod == PaymentMethod.PaymentOnTheSpot)
+                    return "پرداخت در محل";
+
+                else
+                    return "";
+
+            }
+        }
     }
 
 

@@ -12,5 +12,6 @@ namespace Application.Interfaces.Order
         ICreatOrderService creatOrderService { get; }
         IGetOrdersCustomerService getOrdersCustomer { get; }
         IGetOrderCodeService getOrderCoedService { get; }
+        IGetListOrdersForSendService getListOrdersForSendService { get; }
     }
 }

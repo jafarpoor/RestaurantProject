@@ -124,7 +124,7 @@ namespace EndPoint.Site.Controllers
             else
             {
                 //برو به صفحه سفارشات من
-                return RedirectToAction("Index", "Orders", new { area = "customers" });
+                return RedirectToAction("Orders", "Customer", new { area = "customers" });
             }
         }
 

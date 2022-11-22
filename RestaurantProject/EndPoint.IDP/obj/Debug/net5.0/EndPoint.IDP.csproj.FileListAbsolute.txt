@@ -194,6 +194,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\IdentitySer
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\IdentityServer4.EntityFramework.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\IdentityServer4.EntityFramework.Storage.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\IdentityServer4.Storage.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.IDP\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll

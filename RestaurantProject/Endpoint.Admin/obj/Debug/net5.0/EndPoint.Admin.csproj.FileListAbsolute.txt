@@ -258,6 +258,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\EndPoint.
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\AutoMapper.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Humanizer.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -398,6 +399,8 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Vie
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\Index.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\OrderDetail.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

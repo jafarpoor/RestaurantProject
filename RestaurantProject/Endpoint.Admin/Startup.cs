@@ -2,6 +2,8 @@ using Application.Categories.Commands.AddCategories;
 using Application.Categories.FacadePattern;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
+using Application.Interfaces.Order;
+using Application.Orders.FacadePattern;
 using Application.UriComposer;
 using Application.Users.FacadePattern;
 using Infrastructure.Api.ImageApi;
@@ -49,6 +51,7 @@ namespace EndPoint.Admin
             //Facade
             services.AddScoped<IUserFacade, UserFacade>();
             services.AddTransient<ICategoryFacade, CategoryFacade>();
+            services.AddTransient<IOrderFacade, OrderFacade>();
 
 
             //public

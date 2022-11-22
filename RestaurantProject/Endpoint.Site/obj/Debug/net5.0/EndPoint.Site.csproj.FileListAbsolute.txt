@@ -271,6 +271,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\AutoMapper.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Humanizer.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -439,4 +440,3 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
