@@ -28,5 +28,10 @@ namespace EndPoint.Site.Areas.Customers.Controllers
             var UserId = ClaimUtility.GetUserId(User);
             return View(_orderFacade.getOrdersCustomer.GetList(UserId));
         }
+
+        public IActionResult OrderCustomerDetail(int Id)
+        {
+            return View(_orderFacade.getOrderCustomerDetailForUserService.GetOrderDetail(Id));
+        }
     }
 }

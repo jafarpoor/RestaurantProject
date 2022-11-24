@@ -62,7 +62,7 @@ namespace Application.Orders.Commands
                 var address = _mapper.Map<Address>(userAddress);
                 var order = new Order() { 
                     UserId= basket.BuyerId ,
-                    Address= address ,
+                    userAddress= userAddress,
                     PaymentMethod =paymentMethod ,
                     OrderItems = orderItems ,
                     OrderCode = CreatOrderCode.GetOrderCode()

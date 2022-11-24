@@ -23,8 +23,7 @@ namespace EndPoint.Admin.Controllers
 
         public IActionResult OrderDetail(int Id)
         {
-            // ویو ایجاد شده
-            return View();
+            return View(_orderFacade.getOrderCustomerDetailForAdminService.GetOrderDetail(Id));
         }
     }
 }

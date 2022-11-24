@@ -33,7 +33,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 635, DateTimeKind.Local).AddTicks(7994));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 188, DateTimeKind.Local).AddTicks(2233));
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -62,7 +62,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 644, DateTimeKind.Local).AddTicks(2921));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 198, DateTimeKind.Local).AddTicks(2052));
 
                     b.Property<int>("Qty")
                         .HasColumnType("int");
@@ -95,7 +95,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 644, DateTimeKind.Local).AddTicks(6116));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 198, DateTimeKind.Local).AddTicks(5871));
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -131,7 +131,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 644, DateTimeKind.Local).AddTicks(8091));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 198, DateTimeKind.Local).AddTicks(8279));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -172,7 +172,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 645, DateTimeKind.Local).AddTicks(350));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 199, DateTimeKind.Local).AddTicks(1702));
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -198,7 +198,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 645, DateTimeKind.Local).AddTicks(3038));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 199, DateTimeKind.Local).AddTicks(4509));
 
                     b.Property<string>("OrderCode")
                         .HasColumnType("nvarchar(max)");
@@ -207,9 +207,6 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("OrderStatus")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PaymentId")
                         .HasColumnType("int");
 
                     b.Property<int>("PaymentMethod")
@@ -227,7 +224,12 @@ namespace Persistence.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("userAddressId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("userAddressId");
 
                     b.ToTable("Orders");
                 });
@@ -245,7 +247,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 645, DateTimeKind.Local).AddTicks(5399));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 199, DateTimeKind.Local).AddTicks(7714));
 
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
@@ -295,7 +297,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 645, DateTimeKind.Local).AddTicks(8195));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 200, DateTimeKind.Local).AddTicks(753));
 
                     b.Property<bool>("IsPay")
                         .HasColumnType("bit");
@@ -314,8 +316,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId")
-                        .IsUnique();
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Payments");
                 });
@@ -349,7 +350,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 21, 19, 6, 8, 646, DateTimeKind.Local).AddTicks(2790));
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 200, DateTimeKind.Local).AddTicks(4499));
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -417,14 +418,25 @@ namespace Persistence.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 24, 11, 7, 10, 200, DateTimeKind.Local).AddTicks(6492));
+
                     b.Property<string>("PostalAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReciverName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
@@ -606,6 +618,17 @@ namespace Persistence.Migrations
                     b.Navigation("CategoryItemImage");
                 });
 
+            modelBuilder.Entity("Domain.Orders.Order", b =>
+                {
+                    b.HasOne("Domain.Users.UserAddress", "userAddress")
+                        .WithMany()
+                        .HasForeignKey("userAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("userAddress");
+                });
+
             modelBuilder.Entity("Domain.Orders.OrderItem", b =>
                 {
                     b.HasOne("Domain.Categories.CategoryItem", "CateoryItem")
@@ -624,8 +647,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Payments.Payment", b =>
                 {
                     b.HasOne("Domain.Orders.Order", "Order")
-                        .WithOne("Payment")
-                        .HasForeignKey("Domain.Payments.Payment", "OrderId")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -701,8 +724,6 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Orders.Order", b =>
                 {
                     b.Navigation("OrderItems");
-
-                    b.Navigation("Payment");
                 });
 #pragma warning restore 612, 618
         }

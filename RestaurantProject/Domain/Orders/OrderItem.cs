@@ -18,5 +18,6 @@ namespace Domain.Orders
         public string PictureUri { get;  set; }
         public int UnitPrice { get;  set; }
         public int Units { get;  set; }
+
     }
 }

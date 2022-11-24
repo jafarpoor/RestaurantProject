@@ -114,10 +114,10 @@ namespace EndPoint.Site.Controllers
             var userId = ClaimUtility.GetUserId(User);
             var basket = _basket.basketService.GetBasketByBuyerId(userId);
             var Order = _OrderService.creatOrderService.CreatOrder(basket.Id, Address, PaymentMethod);
+            //ثبت پرداخت
+            var payment = _paymentService.creatPayment.PayForOrder(Order);
             if (PaymentMethod == PaymentMethod.OnlinePaymnt)
-            {
-                //ثبت پرداخت
-                var payment = _paymentService.creatPayment.PayForOrder(Order);
+            {            
                 //ارسال به درگاه پرداخت
                  return RedirectToAction("Index", "Pay", new { PaymentId = payment.PaymentId });
             }

@@ -1,5 +1,6 @@
 ﻿using Domain.Attributes;
 using Domain.Payments;
+using Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,12 +14,11 @@ namespace Domain.Orders
     [Auditable]
     public class Order
     {
-        //test git
         public int Id { get; set; }
         public string UserId { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.Now;
-        [NotMapped]
-        public Address Address { get; set; }
+        public UserAddress userAddress { get; set; }
+        public int userAddressId { get; set; } 
         public PaymentMethod PaymentMethod { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public OrderStatus OrderStatus { get; set; }
