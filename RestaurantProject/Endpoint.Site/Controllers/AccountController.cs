@@ -14,13 +14,14 @@ using System.Threading.Tasks;
 
 namespace EndPoint.Site.Controllers
 {
+    [Route("~/Account/{action}")]
     public class AccountController : Controller
     {
 
         private readonly IUserFacade _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManagerIdentity;
-        private readonly IBasketFacade _basket;
+        private readonly IBasketFacade _basketFacade;
         public AccountController(IUserFacade userManager , SignInManager<User> signInManager,
             UserManager<User> userManagerIdentity ,
             IBasketFacade basket)
@@ -28,7 +29,7 @@ namespace EndPoint.Site.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
             _userManagerIdentity = userManagerIdentity;
-            _basket = basket;
+            _basketFacade = basket;
         }
 
         public IActionResult Index()
@@ -37,10 +38,13 @@ namespace EndPoint.Site.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult Register(string returnUrl = "/")
         {
 
-            return View();
+            return View(new RegisterDataModel
+            {
+                ReturnUrl = returnUrl,
+            });
         }
 
         [HttpPost]
@@ -60,7 +64,7 @@ namespace EndPoint.Site.Controllers
             _userManager.addUserService.Creat(register);
             var user = _userManagerIdentity.FindByNameAsync(register.Email).Result;
             TransferBasketForuser(user.Id);
-            return View();
+            return Redirect(register.ReturnUrl);
         }
 
         public IActionResult Login(string returnUrl = "/")
@@ -102,9 +106,15 @@ namespace EndPoint.Site.Controllers
             if (Request.Cookies.ContainsKey(ClaimUtility.basketCookieName))
             {
                 var anonymousId = Request.Cookies[ClaimUtility.basketCookieName];
-                _basket.basketService.TransferBasket(anonymousId, userId);
+                _basketFacade.transferBasketService.TransferBasket(anonymousId, userId);
                 Response.Cookies.Delete(ClaimUtility.basketCookieName);
             }
+        }
+
+        public IActionResult LogOut()
+        {
+            _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

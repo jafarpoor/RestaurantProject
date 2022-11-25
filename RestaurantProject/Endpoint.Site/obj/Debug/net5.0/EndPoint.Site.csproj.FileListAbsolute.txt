@@ -412,6 +412,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Area
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Address\EditUserAddress.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Address\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Index.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\OrderCustomerDetail.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\Orders.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Shared\_LayoutCustomerPanel.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -440,4 +441,3 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\Razor\Areas\Customers\Views\Customer\OrderCustomerDetail.cshtml.g.cs

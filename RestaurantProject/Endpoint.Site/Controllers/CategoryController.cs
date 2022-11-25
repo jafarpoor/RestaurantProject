@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace EndPoint.Site.Controllers
 {
+    [Route("~/Category/{action}")]
     public class CategoryController : Controller
     {
         private readonly IImageUploadService _imageUploadService;
@@ -39,7 +40,7 @@ namespace EndPoint.Site.Controllers
                 Name = p.Name,
                 Note = p.Note,
                 SrcImage = p.SrcImage ,
-                CountCategoryInBasket = _basket.basketService.GetCountCategoryItems(UserId, p.Id)
+                CountCategoryInBasket = _basket.getCountCategoryItemsService.GetCountCategoryItems(UserId, p.Id)
             }).ToList();
             return View(Result);
         }

@@ -7,12 +7,14 @@
 <div class="checkout-section shadow-around">
     <div class="checkout-section-content">
         <form method="post" asp-action="AddNewAddress" asp-controller="Address" asp-area="customers" data-select2-id="select2-data-18-nzre">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row" data-select2-id="select2-data-17-414m">
                 <div class="col-lg-6 mb-3">
                     <div class="text-sm text-muted mb-1">استان:</div>
                     <div class="text-dark font-weight-bold">
                         <div class="form-element-row mb-0">
                             <input type="text" class="input-element" asp-for="State">
+                            <span asp-validation-for="State" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -22,6 +24,7 @@
                     <div class="text-dark font-weight-bold">
                         <div class="form-element-row mb-0">
                             <input type="text" class="input-element" asp-for="City">
+                            <span asp-validation-for="City" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -32,6 +35,7 @@
                     <div class="text-dark font-weight-bold">
                         <div class="form-element-row mb-0">
                             <input type="text" class="input-element" asp-for="ZipCode">
+                            <span asp-validation-for="ZipCode" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -41,6 +45,7 @@
                     <div class="text-dark font-weight-bold">
                         <div class="form-element-row mb-0">
                             <input type="text" class="input-element" asp-for="ReciverName">
+                            <span asp-validation-for="ReciverName" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -49,6 +54,7 @@
                     <div class="text-dark font-weight-bold">
                         <div class="form-element-row mb-0">
                             <textarea asp-for="PostalAddress" cols="30" rows="10" class="input-element"></textarea>
+                            <span asp-validation-for="PostalAddress" class="text-danger"></span>
                         </div>
                     </div>
                 </div>

@@ -11,5 +11,7 @@ namespace Application.Interfaces.Payments
         ICreatPaymentService creatPayment { get; }
         IGetPaymentService getPayment { get; }
         IVerifyPaymentService verifyPayment { get ;}
+
+        IReciveToCustomerService reciveToCustomerService { get; }
     }
 }

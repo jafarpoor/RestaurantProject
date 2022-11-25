@@ -37,7 +37,8 @@ namespace Application.Payments.Commands
                     Payment payment = new Payment
                     {
                         Order = orders,
-                        Amount = orders.TotalPrice()
+                        Amount = orders.TotalPrice(),
+                        DatePay = DateTime.Now
                     };
 
                     _context.Payments.Add(payment);

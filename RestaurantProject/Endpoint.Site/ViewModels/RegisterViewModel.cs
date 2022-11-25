@@ -38,5 +38,7 @@ namespace EndPoint.Site.ViewModels
         public string PhoneNumber { get; set; }
 
         public string UserName { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }

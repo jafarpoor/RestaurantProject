@@ -40,7 +40,7 @@
                         </div>
                         <div class="auth-form-title">
                             ثبت نام
-                        </div> 
+                        </div>
                         <form asp-action="Register">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-element-row">
@@ -106,6 +106,7 @@
                             <span>قبلا ثبت‌نام کرده‌اید؟</span>
                             <a asp-controller="Account" asp-action="Login" class="link--with-border-bottom">وارد شوید</a>
                         </div>
+                        <input type="hidden" asp-for="ReturnUrl" class="form-control" />
                     </div>
                 </div>
             </div>

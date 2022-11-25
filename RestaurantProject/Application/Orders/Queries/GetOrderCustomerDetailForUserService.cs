@@ -32,7 +32,8 @@ namespace Application.Orders.Queries
                 {
                     Price = item.UnitPrice * item.Units,
                     ProductOrderName = item.ProductName,
-                    ProductOrderQty = item.Units
+                    ProductOrderQty = item.Units ,
+                    
                 };
                 model.Add(orderItm);
             }

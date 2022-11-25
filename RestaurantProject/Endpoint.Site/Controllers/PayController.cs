@@ -18,6 +18,7 @@ using Payment = ZarinPal.Class.Payment;
 
 namespace EndPoint.Site.Controllers
 {
+    [Route("~/Pay/{action}")]
     [Authorize]
     public class PayController : Controller
     {

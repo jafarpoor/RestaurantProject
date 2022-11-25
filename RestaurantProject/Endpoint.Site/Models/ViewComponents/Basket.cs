@@ -19,7 +19,7 @@ namespace EndPoint.Site.Models.ViewComponents
         public IViewComponentResult Invoke()
         {
             GetUserIdInBasket();
-            var Result = _basket.basketService.GetOrCreateBasketForUser(UserId);
+            var Result = _basket.getOrCreateBasketForUserService.GetOrCreateBasketForUser(UserId);
             return View(viewName: "Basket", model: Result);
         }
 

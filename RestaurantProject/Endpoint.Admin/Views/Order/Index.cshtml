@@ -32,6 +32,7 @@
                                             <td class="sorting_1">@item.PayStatus</td>
                                             <td class="sorting_1">@item.PayDate</td>
                                             <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
+                                            <td class="text-center fas fa-wrench"> <a asp-controller="order" asp-action="OrderDelivered" asp-route-Id="@item.OrderId">تحویل سفارش</a></td>
 
                                             <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
                                         </tr>

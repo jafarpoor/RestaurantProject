@@ -51,11 +51,20 @@ namespace Application.Payments.FacadePattern
         {
             get
             {
-                return _verifyPaymentService = _verifyPaymentService  ?? new VerifyPaymentService(_context);
+                return _verifyPaymentService = _verifyPaymentService ?? new VerifyPaymentService(_context);
 
 
             }
- 
+
         }
+
+        private IReciveToCustomerService _reciveToCustomerService;
+
+        public IReciveToCustomerService reciveToCustomerService {
+            get
+            {
+                return _reciveToCustomerService = _reciveToCustomerService ?? new ReciveToCustomerService(_context);
+            }
+            }
     }
 }

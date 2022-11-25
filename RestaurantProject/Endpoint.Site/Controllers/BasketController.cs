@@ -18,10 +18,11 @@ using System.Threading.Tasks;
 
 namespace EndPoint.Site.Controllers
 {
+    [Route("~/Basket/{action}")]
     public class BasketController : Controller
     {
         private readonly SignInManager<User> _signInManager;
-        private readonly IBasketFacade _basket;
+        private readonly IBasketFacade _basketFacade;
         private readonly IOrderFacade _OrderService;
         private readonly IUserFacade _UserService;
         private readonly IPaymentFacade _paymentService;
@@ -33,7 +34,7 @@ namespace EndPoint.Site.Controllers
                                 IUserFacade UserService ,
                                 IPaymentFacade paymentService)
         {
-            _basket = basket;
+            _basketFacade = basket;
             _signInManager = signInManager;
             _OrderService = OrderService;
             _UserService = UserService;
@@ -44,7 +45,7 @@ namespace EndPoint.Site.Controllers
         public IActionResult Index(int categoryItemId , int Qty=1)
         {
             var result = GetOrSetBasket();
-            _basket.basketService.AddOrGetItemToBasket(result.Id, categoryItemId , Qty);
+            _basketFacade.basketService.AddOrGetItemToBasket(result.Id, categoryItemId , Qty);
             return Json(true);
         }
 
@@ -53,12 +54,12 @@ namespace EndPoint.Site.Controllers
             if (_signInManager.IsSignedIn(User))
             {
                 UserId = ClaimUtility.GetUserId(User);
-                return _basket.basketService.GetOrCreateBasketForUser(UserId);
+                return _basketFacade.getOrCreateBasketForUserService.GetOrCreateBasketForUser(UserId);
             }
             else
             {
                 SetCookiesForBasket();
-                return _basket.basketService.GetOrCreateBasketForUser(UserId);
+                return _basketFacade.getOrCreateBasketForUserService.GetOrCreateBasketForUser(UserId);
             }
         }
 
@@ -86,13 +87,13 @@ namespace EndPoint.Site.Controllers
             if (UserId == null)
                 return NotFound();
 
-            return View(_basket.basketService.GetBasketByBuyerId(UserId));
+            return View(_basketFacade.getBasketByBuyerIdService.GetBasketByBuyerId(UserId));
         }
 
         [HttpPost]
         public IActionResult RemoveItemFromBasket(int ItemId)
         {
-            _basket.basketService.RemoveBasketItem(ItemId);
+            _basketFacade.removeBasketItemService.RemoveBasketItem(ItemId);
             return RedirectToAction("ShowBasketItem");
         }
 
@@ -102,7 +103,7 @@ namespace EndPoint.Site.Controllers
         {
             ShippingPaymentViewModel model = new ShippingPaymentViewModel();
             var userId = ClaimUtility.GetUserId(User);
-            model.Basket = _basket.basketService.GetBasketByBuyerId(userId);
+            model.Basket = _basketFacade.getBasketByBuyerIdService.GetBasketByBuyerId(userId);
             model.UserAddresses = _UserService.getUserAddressService.GetUserAddress(userId);
             return View(model);
         }
@@ -112,7 +113,7 @@ namespace EndPoint.Site.Controllers
         public IActionResult ShippingPayment(int Address, PaymentMethod PaymentMethod)
         {
             var userId = ClaimUtility.GetUserId(User);
-            var basket = _basket.basketService.GetBasketByBuyerId(userId);
+            var basket = _basketFacade.getBasketByBuyerIdService.GetBasketByBuyerId(userId);
             var Order = _OrderService.creatOrderService.CreatOrder(basket.Id, Address, PaymentMethod);
             //ثبت پرداخت
             var payment = _paymentService.creatPayment.PayForOrder(Order);
