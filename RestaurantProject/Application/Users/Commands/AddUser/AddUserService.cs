@@ -3,14 +3,9 @@ using Application.PagerConfig;
 using Application.Users.DTO;
 using AutoMapper;
 using Domain.Users;
-using Infrastructure.PagerConfig;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Application.Users.Commands.AddUser
 {

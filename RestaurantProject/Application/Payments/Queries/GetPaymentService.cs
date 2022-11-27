@@ -1,16 +1,12 @@
 ﻿using Application.Interfaces;
 using Application.Interfaces.Payments;
-using Application.Orders.DTO;
 using Application.Payments.DTO;
-using Common.Helper;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Application.Payments.Queries
 {

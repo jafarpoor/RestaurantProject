@@ -1,16 +1,10 @@
-﻿using Application.Categories.Commands;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.Commands;
 using Application.Orders.Queries;
 using Application.UriComposer;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Orders.FacadePattern
 {

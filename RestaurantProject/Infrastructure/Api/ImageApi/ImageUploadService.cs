@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace Infrastructure.Api.ImageApi

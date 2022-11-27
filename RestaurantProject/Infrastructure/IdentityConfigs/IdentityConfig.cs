@@ -1,16 +1,10 @@
-﻿using Application.Interfaces;
-using Domain.Users;
+﻿using Domain.Users;
 using Infrastructure.Helper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
-using Persistence.Migrations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.IdentityConfigs
 {

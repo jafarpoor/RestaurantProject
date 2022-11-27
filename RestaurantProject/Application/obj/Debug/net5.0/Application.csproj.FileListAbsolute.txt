@@ -46,3 +46,4 @@ F:\RestaurantProject\RestaurantProject\Application\obj\Debug\net5.0\Application.
 F:\RestaurantProject\RestaurantProject\Application\obj\Debug\net5.0\Application.dll
 F:\RestaurantProject\RestaurantProject\Application\obj\Debug\net5.0\ref\Application.dll
 F:\RestaurantProject\RestaurantProject\Application\obj\Debug\net5.0\Application.pdb
+F:\RestaurantProject\RestaurantProject\Application\obj\Debug\net5.0\Application.csproj.CopyComplete
