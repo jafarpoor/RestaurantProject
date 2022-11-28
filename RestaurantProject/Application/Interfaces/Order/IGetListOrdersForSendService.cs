@@ -5,6 +5,6 @@ namespace Application.Interfaces.Order
 {
     public interface IGetListOrdersForSendService
     {
-        List<GetListOrdersForSendDataModel> GetList();
+        List<GetListOrdersForSendDataModel> GetList(string OrderStatus);
     }
 }

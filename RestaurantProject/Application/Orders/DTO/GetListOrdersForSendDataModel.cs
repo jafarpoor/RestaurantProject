@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace Application.Orders.DTO
 {
    public class GetListOrdersForSendDataModel
@@ -10,5 +12,6 @@ namespace Application.Orders.DTO
         public string PayDate { get; set; }
         public int PayAmount { get; set; }
         public string OrderStatus { get; set; }
+ 
     }
 }

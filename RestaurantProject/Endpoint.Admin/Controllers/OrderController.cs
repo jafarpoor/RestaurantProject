@@ -1,6 +1,9 @@
 ﻿using Application.Interfaces.Order;
 using Application.Interfaces.Payments;
+using Domain.Orders;
+using EndPoint.Admin.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +22,42 @@ namespace EndPoint.Admin.Controllers
             _orderFacade = orderFacade;
             _paymentFacade = paymentFacade;
         }
+        [HttpGet]
         public IActionResult Index()
         {
-            return View(_orderFacade.getListOrdersForSendService.GetList());
+            GetListOrdersForSendViewModel model = new GetListOrdersForSendViewModel();
+            var ResultSelectItem = new List<SelectListItem>();
+
+            foreach (var item in EnumHelper<OrderStatus>.GetValues(OrderStatus.All))
+            {
+                ResultSelectItem.Add(new SelectListItem
+                {
+                    Text = EnumHelper<OrderStatus>.GetDisplayValue(item),
+                    Value = EnumHelper<OrderStatus>.Parse(item.ToString()).ToString()
+                }); ;
+            }
+            model.OrderStatusItems = ResultSelectItem;
+            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(null);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Index(string OrderStatusName)
+        {
+            GetListOrdersForSendViewModel model = new GetListOrdersForSendViewModel();
+            var ResultSelectItem = new List<SelectListItem>();
+
+            foreach (var item in EnumHelper<OrderStatus>.GetValues(OrderStatus.All))
+            {
+                ResultSelectItem.Add(new SelectListItem
+                {
+                    Text = EnumHelper<OrderStatus>.GetDisplayValue(item),
+                    Value = EnumHelper<OrderStatus>.Parse(item.ToString()).ToString()
+                }); ;
+            }
+            model.OrderStatusItems = ResultSelectItem;
+            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(OrderStatusName);
+            return View(model);
         }
 
         public IActionResult OrderDetail(int Id)

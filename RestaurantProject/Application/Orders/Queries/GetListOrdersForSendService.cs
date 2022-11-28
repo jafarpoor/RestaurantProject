@@ -2,6 +2,7 @@
 using Application.Interfaces.Order;
 using Application.Orders.DTO;
 using Common.Helper;
+using Domain.Payments;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,28 @@ namespace Application.Orders.Queries
             _dataBaseContext = dataBaseContext;
         }
 
-        public List<GetListOrdersForSendDataModel> GetList()
+        public List<GetListOrdersForSendDataModel> GetList(string OrderStatus)
         {
-            var Result = _dataBaseContext.Payments
-                         .Include(p => p.Order)
-                         .ThenInclude(p => p.OrderItems)
-                         .Where(p => p.Order.OrderStatus == Domain.Orders.OrderStatus.Processing)
-                         .Select(p => new GetListOrdersForSendDataModel
+           IQueryable<Payment> Result = _dataBaseContext.Payments
+                    .Include(p => p.Order)
+                    .ThenInclude(p => p.OrderItems);
+            if(!string.IsNullOrEmpty(OrderStatus))
+            if (OrderStatus.Contains("Processing"))
+            {
+              Result = Result.Where(p => p.Order.OrderStatus == Domain.Orders.OrderStatus.Processing);
+            }
+
+            else if (OrderStatus.Contains("Delivered"))
+            {
+                Result = Result.Where(p => p.Order.OrderStatus == Domain.Orders.OrderStatus.Delivered);
+            }
+
+            else if (OrderStatus.Contains("Cancelled"))
+            {
+                Result = Result.Where(p => p.Order.OrderStatus == Domain.Orders.OrderStatus.Cancelled);
+            }
+
+          var model =  Result.Select(p => new GetListOrdersForSendDataModel
                          {
                              OrderId = p.Order.Id,
                              PayAmount = p.Amount,
@@ -34,7 +50,7 @@ namespace Application.Orders.Queries
                              PayDate = ConvertDate.ConvertMiladiToShamsi(p.DatePay , "yyyy/MM/dd")
                          }).ToList();
 
-            return Result;
+            return model;
         }
     }
 }

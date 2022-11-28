@@ -3,6 +3,7 @@ using Domain.Payments;
 using Domain.Users;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 
@@ -46,15 +47,7 @@ namespace Domain.Orders
         {
             OrderStatus = OrderStatus.Delivered;
         }
-
-        /// <summary>
-        /// ثبت مرجوعی کالا
-        /// </summary>
-        public void OrderReturned()
-        {
-            OrderStatus = OrderStatus.Returned;
-        }
-
+ 
 
         /// <summary>
         /// لغو سفارش
@@ -70,15 +63,12 @@ namespace Domain.Orders
                 string Name = "";
                 switch ((int)OrderStatus)
                 {
-                    case 0:
+                    case 1:
                         Name = " در حال پردازش";
                         break;
-                    case 1:
-                        Name = "تحویل داده شد";
-                        break;
                     case 2:
-                        Name = "مرجوعی";
-                        break;
+                        Name = "تحویل داده شد";
+                        break;        
                     case 3:
                         Name = "کنسل شد";
                         break;
@@ -134,25 +124,18 @@ namespace Domain.Orders
 
     public enum OrderStatus
     {
+        [Display(Name = "همه")]
+        All = 0 ,
 
-        /// <summary>
-        /// در حال پردازش
-        /// </summary>
-        Processing = 0,
-        /// <summary>
-        /// تحویل داده شد
-        /// </summary>
-        Delivered = 1,
-        /// <summary>
-        /// مرجوعی
-        /// </summary>
-        Returned = 2,
-        /// <summary>
-        /// لغو شد
-        /// </summary>
-        Cancelled = 3,
+       [Display(Name ="در حال پردازش")]
+        Processing = 1,
+        
+        [Display(Name ="تحویل داده شد")]
+        Delivered = 2,
+
+        [Display(Name ="کنسل شد")]
+        Cancelled = 3
+
+       
     }
-
-
-
 }

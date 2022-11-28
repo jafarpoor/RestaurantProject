@@ -1,8 +1,9 @@
-﻿@model IEnumerable<Application.Orders.DTO.GetListOrdersForSendDataModel> 
+﻿@model EndPoint.Admin.ViewModels.GetListOrdersForSendViewModel
 @{
     ViewData["Title"] = "لیست سفارشات کاربر";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing" id="cancel-row">
 
@@ -12,6 +13,13 @@
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                         <div class="row">
                             <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label">نوع فیلتر وضعیت سفارش</label>
+                                    <select id="OrderStatus" 
+                                            asp-items="Model.OrderStatusItems" onchange="ChangeStatus()">
+                                    </select>
+
+                                </div>
                                 <table class="multi-table table table-hover dataTable" style="width: 100%;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
                                     <thead>
                                         <tr role="row">
@@ -24,36 +32,21 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var item in Model)
+                                        @foreach (var item in Model.getListOrdersForSendDataModels)
                                         {
-                                        <tr role="row">
-                                            <td class="sorting_1">@item.OrderCode</td>
-                                            <td class="sorting_1">@item.OrderStatus</td>
-                                            <td class="sorting_1">@item.PayStatus</td>
-                                            <td class="sorting_1">@item.PayDate</td>
-                                            <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
-                                            <td class="text-center fas fa-wrench"> <a asp-controller="order" asp-action="OrderDelivered" asp-route-Id="@item.OrderId">تحویل سفارش</a></td>
+                                            <tr role="row">
+                                                <td class="sorting_1">@item.OrderCode</td>
+                                                <td class="sorting_1">@item.OrderStatus</td>
+                                                <td class="sorting_1">@item.PayStatus</td>
+                                                <td class="sorting_1">@item.PayDate</td>
+                                                <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
+                                                <td class="text-center fas fa-wrench"> <a asp-controller="order" asp-action="OrderDelivered" asp-route-Id="@item.OrderId">تحویل سفارش</a></td>
 
-                                            <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
-                                        </tr>
+                                                <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
-                            </div>
-                        </div><div class="row">
-                            <div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">صفحه 1 از 2</div></div><div class="col-sm-12 col-md-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                            <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                                            </a>
-                                        </li>
-                                        <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                        <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                        <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -63,3 +56,30 @@
 
     </div>
 </div>
+
+@section Scripts {
+
+    <script>
+    function ChangeStatus()
+    {
+        var OrderStatus = $("#OrderStatus").val();
+        var postData = {
+            'OrderStatusName': OrderStatus
+        };
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/order/Index",
+            data: postData ,
+            success: function () {
+                location.reload();
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        })
+    }
+    </script>
+
+}
