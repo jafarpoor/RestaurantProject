@@ -1,7 +1,7 @@
 ﻿using Application.Categories.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
-using Application.PagerConfig;
 using Common.Helper;
 using Domain.Categories;
 using System;
@@ -16,7 +16,7 @@ namespace Application.Categories.Commands.AddCategories
         {
             _context = context;
         }
-        public ResultServices Add(AddCategoryDataModel model)
+        public ResultDataModel<string> Add(AddCategoryDataModel model)
         {
             try
             {
@@ -26,20 +26,20 @@ namespace Application.Categories.Commands.AddCategories
                 };
                 _context.Categories.Add(category);
                 _context.SaveChanges();
-                return new ResultServices
+                return new ResultDataModel<string>
                 {
-                    Result =true ,
+                    IsSuccess =true ,
                     Message = Messages.Successed,
-                    Id = category.Id.ToString()
+                    Data = category.Id.ToString()
                 };
             }
             catch (Exception)
             {
-                return new ResultServices
+                return new ResultDataModel<string>
                 {
-                    Result = false,
+                    IsSuccess = false,
                     Message = Messages.Error,
-                    Id = null
+                    Data = null
                 };
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Application.Categories.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
 using Application.UriComposer;
@@ -19,14 +20,19 @@ namespace Application.Categories.Queries
             _Contetx = Contetx;
             _uriComposerService = uriComposerService;
         }
-        public List<ListCategoryItemDataModel> GetList(int ParentId)
+        public ResultDataModel<List<ListCategoryItemDataModel>> GetList(int ParentId)
         {
             var Result = _Contetx.CategoryItems
                            .Include(p=>p.CategoryItemImage)
                            .Where(p => p.CategoryId == ParentId).ToList();
 
-           if(Result ==null)
-                throw new Exception(Messages.NotFund);
+            if (Result == null)
+                return new ResultDataModel<List<ListCategoryItemDataModel>>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
 
             List<ListCategoryItemDataModel> modelList = new List<ListCategoryItemDataModel>();
             foreach (var item in Result)
@@ -42,7 +48,12 @@ namespace Application.Categories.Queries
                 };
                 modelList.Add(listCategoryItemDataModel);
             }
-            return modelList;
+
+            return new ResultDataModel<List<ListCategoryItemDataModel>> { 
+                Data = modelList ,
+                IsSuccess =true ,
+                Message = Messages.Successed
+            };
         }
 
         public List<string> GetColumnsName()

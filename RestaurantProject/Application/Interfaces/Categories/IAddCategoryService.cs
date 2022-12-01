@@ -1,10 +1,11 @@
 ﻿using Application.Categories.DTO;
-using Application.PagerConfig;
+using Application.DTO;
+
 
 namespace Application.Interfaces.Categories
 {
   public  interface IAddCategoryService
     {
-            ResultServices Add(AddCategoryDataModel model);
+        ResultDataModel<string> Add(AddCategoryDataModel model);
     }
 }

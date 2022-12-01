@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Users;
 using Application.Users.DTO;
 using AutoMapper;
@@ -23,10 +24,27 @@ namespace Application.Users.Queries
             _mapper = mapper;
             _userManager = userManager;
         }
-        public List<ListUsersDataModel> GetList()
+        public ResultDataModel<List<ListUsersDataModel>> GetList()
         {
-            var Result = _mapper.Map<List<ListUsersDataModel>>(_context.Users.ToList());
-            return Result;
+            try
+            {
+                return new ResultDataModel<List<ListUsersDataModel>>
+                {
+                    Data = _mapper.Map<List<ListUsersDataModel>>(_context.Users.ToList()),
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
+            }
+            catch (System.Exception)
+            {
+                return new ResultDataModel<List<ListUsersDataModel>>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
+            }
+         
         }
 
         public List<string> GetColumnsName()
@@ -43,11 +61,27 @@ namespace Application.Users.Queries
             return ListName;
         }
 
-        public EditUserDataModel Find(string Id)
+        public ResultDataModel<EditUserDataModel> Find(string Id)
         {
-            var user = _userManager.FindByIdAsync(Id).Result;
-            var Result = _mapper.Map<EditUserDataModel>(user);
-            return Result;
+            try
+            {
+                var user = _userManager.FindByIdAsync(Id).Result;
+                return new ResultDataModel<EditUserDataModel>
+                {
+                    Data = _mapper.Map<EditUserDataModel>(user),
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
+            }
+            catch (System.Exception)
+            {
+                return new ResultDataModel<EditUserDataModel>
+                {
+                    Data =null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
+            }
         }
     }
 }

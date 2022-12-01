@@ -1,7 +1,9 @@
-﻿namespace Application.Interfaces.Categories
+﻿using Application.DTO;
+
+namespace Application.Interfaces.Categories
 {
    public interface IGetCategoryName
     {
-        string GetName(int ParentId);
+        ResultDataModel<string> GetName(int ParentId);
     }
 }

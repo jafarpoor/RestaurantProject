@@ -50,7 +50,7 @@ namespace EndPoint.Admin.Controllers
         public IActionResult GetGategoryItems(int parentId)
         {
             ListCategoryViewModel listView = new ListCategoryViewModel();
-            listView.listCategoryItemDataModels = _category.getListCategoryItemService.GetList(parentId);
+            listView.listCategoryItemDataModels = _category.getListCategoryItemService.GetList(parentId).Data;
             listView.columnsName = _category.getListCategoryItemService.GetColumnsName();
             ViewBag.CategoryName = _category.getCategoryName.GetName(parentId);
             return View(listView);
@@ -60,7 +60,7 @@ namespace EndPoint.Admin.Controllers
         public IActionResult AddCategoryItem()
         {
             var selectList = new List<SelectListItem>();
-            List<ListCategoryDataModel> categoryList =_category.getListCategoyService.GetListCategory();
+            List<ListCategoryDataModel> categoryList =_category.getListCategoyService.GetListCategory().Data;
             foreach (var item in categoryList)
             {
                 var itemList = new SelectListItem

@@ -1,10 +1,11 @@
-﻿using Application.Users.DTO;
+﻿using Application.DTO;
+using Application.Users.DTO;
 
 namespace Application.Interfaces.Users
 {
   public  interface IEditUserAddressService
     {
-        void EditAddress(EditUserAddressDataModel editUser);
-        EditUserAddressDataModel FindUserAddress(int Id);
+        ResultDataModel EditAddress(EditUserAddressDataModel editUser);
+        ResultDataModel<EditUserAddressDataModel> FindUserAddress(int Id);
     }
 }

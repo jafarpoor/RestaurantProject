@@ -1,7 +1,7 @@
-﻿using Application.Interfaces;
-using Application.PagerConfig;
+﻿using Application.DTO;
 using Application.Users.DTO;
 using AutoMapper;
+using Common.Helper;
 using Domain.Users;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -21,19 +21,21 @@ namespace Application.Users.Commands.AddUser
             _mapper = mapper;
         }
 
-        public ResultServices Creat(RegisterDataModel model)
+        public ResultDataModel Creat(RegisterDataModel model)
         {
             var user = _mapper.Map<User>(model);
             var Result = _userManager.CreateAsync(user, model.PasswordHash).Result;
             if (Result.Succeeded)
-                return new ResultServices
+                return new ResultDataModel
                 {
-                    Result = true
+                    Message =Messages.Successed ,
+                    IsSuccess = true
                 };
             else
-                return new ResultServices
+                return new ResultDataModel
                 {
-                    Result = false
+                    Message = Messages.NotFund,
+                    IsSuccess = false
                 };
         }
     }

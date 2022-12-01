@@ -1,6 +1,6 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Users;
-using Application.PagerConfig;
 using Application.Users.DTO;
 using AutoMapper;
 using Common.Helper;
@@ -23,7 +23,7 @@ namespace Application.Users.Commands.EditUser
             _userManager = userManager;
 
         }
-        public ResultServices Edit(EditUserDataModel editUserDataModel)
+        public ResultDataModel Edit(EditUserDataModel editUserDataModel)
         {
             try
             {
@@ -35,20 +35,18 @@ namespace Application.Users.Commands.EditUser
                 User.Address = editUserDataModel.Address;
                 User.UserName = editUserDataModel.UserName;
                 _context.SaveChanges();
-                return new ResultServices
+                return new ResultDataModel
                 {
-                    Id = editUserDataModel.Id,
                     Message = Messages.Successed,
-                    Result = true
+                    IsSuccess = true
                 };
             }
             catch (Exception)
             {
-                return new ResultServices
+                return new ResultDataModel
                 {
-                    Id = null,
                     Message = Messages.Error,
-                    Result = false
+                    IsSuccess = false
                 };
             }
           

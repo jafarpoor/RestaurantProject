@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.DTO;
 using Common.Helper;
@@ -19,11 +20,20 @@ namespace Application.Orders.Queries
             _dataBaseContext = dataBaseContext;
         }
 
-        public List<GetListOrdersForSendDataModel> GetList(string OrderStatus)
+        public ResultDataModel<List<GetListOrdersForSendDataModel>> GetList(string OrderStatus)
         {
            IQueryable<Payment> Result = _dataBaseContext.Payments
-                    .Include(p => p.Order)
-                    .ThenInclude(p => p.OrderItems);
+                                       .Include(p => p.Order)
+                                       .ThenInclude(p => p.OrderItems);
+
+            if (Result == null)
+                return new ResultDataModel<List<GetListOrdersForSendDataModel>>
+                {
+                    Data = null ,
+                    IsSuccess = false ,
+                    Message = Messages.NullMassages
+                };
+
             if(!string.IsNullOrEmpty(OrderStatus))
             if (OrderStatus.Contains("Processing"))
             {
@@ -50,7 +60,13 @@ namespace Application.Orders.Queries
                              PayDate = ConvertDate.ConvertMiladiToShamsi(p.DatePay , "yyyy/MM/dd")
                          }).ToList();
 
-            return model;
+            return new ResultDataModel<List<GetListOrdersForSendDataModel>>
+            {
+                Data = model,
+                IsSuccess = true,
+                Message = Messages.Successed
+            };
+                
         }
     }
 }

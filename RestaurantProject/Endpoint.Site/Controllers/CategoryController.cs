@@ -33,7 +33,7 @@ namespace EndPoint.Site.Controllers
         public IActionResult Index(int parentId)
         {
             GetUserIdInBasket();
-            var Result = _category.getListCategoryItemService.GetList(parentId).Select(p=> new ListCategoryItemViewModel { 
+            var Result = _category.getListCategoryItemService.GetList(parentId).Data.Select(p=> new ListCategoryItemViewModel { 
                 Price= p.Price ,
                 DiscountPercentage = p.DiscountPercentage ,
                 Id = p.Id ,

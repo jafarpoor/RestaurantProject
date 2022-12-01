@@ -1,5 +1,7 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Categories;
+using Common.Helper;
 using System;
 using System.Linq;
 
@@ -13,17 +15,35 @@ namespace Application.Categories.Queries
         {
             _context = context;
         }
-        public string GetName(int ParentId)
+        public ResultDataModel<string> GetName(int ParentId)
         {
             try
             {
                 var Result = _context.Categories.SingleOrDefault(p => p.Id == ParentId).TypeName;
-                return Result;
+                if(Result == null)
+                    return new ResultDataModel<string>
+                    {
+                        Data = null,
+                        IsSuccess = false,
+                        Message = Messages.NullMassages
+                    }; 
+                else
+                return new ResultDataModel<string>
+                {
+                    Data = Result ,
+                    IsSuccess =true ,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
 
-                throw;
+                return new ResultDataModel<string>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
         }
     }

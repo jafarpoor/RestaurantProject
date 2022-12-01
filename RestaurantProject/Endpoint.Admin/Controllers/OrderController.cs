@@ -37,7 +37,7 @@ namespace EndPoint.Admin.Controllers
                 }); ;
             }
             model.OrderStatusItems = ResultSelectItem;
-            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(null);
+            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(null).Data;
             return View(model);
         }
 
@@ -56,7 +56,7 @@ namespace EndPoint.Admin.Controllers
                 }); ;
             }
             model.OrderStatusItems = ResultSelectItem;
-            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(OrderStatusName);
+            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(OrderStatusName).Data;
             return View(model);
         }
 

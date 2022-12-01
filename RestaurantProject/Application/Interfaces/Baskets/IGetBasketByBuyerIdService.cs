@@ -1,9 +1,10 @@
 ﻿using Application.Baskets.DTO;
+using Application.DTO;
 
 namespace Application.Interfaces.Baskets
 {
   public  interface IGetBasketByBuyerIdService
     {
-        BasketDataModel GetBasketByBuyerId(string BuyerId);
+       ResultDataModel<BasketDataModel> GetBasketByBuyerId(string BuyerId);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Application.Categories.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
-using Application.PagerConfig;
 using AutoMapper;
 using Common.Helper;
 using Domain.Categories;
@@ -20,26 +20,25 @@ namespace Application.Categories.Commands.AddCategoryItems
             _mapper = mapper;
         }
 
-        public ResultServices AddCaregoryItem(AddCategoryItemDataModel model)
+        public ResultDataModel AddCaregoryItem(AddCategoryItemDataModel model)
         {
             try
             {
                 var Result = _mapper.Map<CategoryItem>(model);
                 _dataBaseContxt.CategoryItems.Add(Result);
                 _dataBaseContxt.SaveChanges();
-                return new ResultServices {
-                    Id = Result.Id.ToString(),
+                return new ResultDataModel
+                {
                     Message = Messages.Successed,
-                    Result = true
+                    IsSuccess = true
                 };
             }
             catch (Exception)
             {
-                return new ResultServices
+                return new ResultDataModel
                 {
-                    Id = null,
                     Message = Messages.Error,
-                    Result = false
+                    IsSuccess = false
                 };
             }
           

@@ -1,10 +1,11 @@
-﻿using Application.Orders.DTO;
+﻿using Application.DTO;
+using Application.Orders.DTO;
 using System.Collections.Generic;
 
 namespace Application.Interfaces.Order
 {
     public interface IGetListOrdersForSendService
     {
-        List<GetListOrdersForSendDataModel> GetList(string OrderStatus);
+        ResultDataModel<List<GetListOrdersForSendDataModel>> GetList(string OrderStatus);
     }
 }

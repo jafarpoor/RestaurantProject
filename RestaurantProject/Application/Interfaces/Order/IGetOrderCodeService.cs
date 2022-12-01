@@ -1,8 +1,10 @@
 ﻿
+using Application.DTO;
+
 namespace Application.Interfaces.Order
 {
    public interface IGetOrderCodeService
     {
-        string GetCode(int OrderId);
+        ResultDataModel<string> GetCode(int OrderId);
     }
 }

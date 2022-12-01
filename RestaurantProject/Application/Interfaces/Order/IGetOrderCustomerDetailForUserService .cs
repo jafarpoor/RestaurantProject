@@ -1,4 +1,5 @@
-﻿using Application.Orders.DTO;
+﻿using Application.DTO;
+using Application.Orders.DTO;
 using System.Collections.Generic;
 
 
@@ -6,6 +7,6 @@ namespace Application.Interfaces.Order
 {
    public interface IGetOrderCustomerDetailForUserService
     {
-        List<GetOrderCustomerDetailForUserDataModel> GetOrderDetail(int OrderID);
+        ResultDataModel<List<GetOrderCustomerDetailForUserDataModel>> GetOrderDetail(int OrderID);
     }
 }

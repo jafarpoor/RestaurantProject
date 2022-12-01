@@ -1,10 +1,11 @@
-﻿using Application.PagerConfig;
+﻿
+using Application.DTO;
 using Application.Users.DTO;
 
 namespace Application.Users.Commands.AddUser
 {
    public interface IAddUserService 
     {
-        ResultServices Creat(RegisterDataModel model);
+        ResultDataModel Creat(RegisterDataModel model);
     }
 }

@@ -1,11 +1,12 @@
 ﻿using Application.Categories.DTO;
+using Application.DTO;
 using System.Collections.Generic;
 
 namespace Application.Interfaces.Categories
 {
    public interface IGetListCategoryItemService
     {
-        List<ListCategoryItemDataModel> GetList(int ParentId);
+        ResultDataModel<List<ListCategoryItemDataModel>> GetList(int ParentId);
         List<string> GetColumnsName();
     }
 }

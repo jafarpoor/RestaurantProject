@@ -1,10 +1,10 @@
 ﻿using Application.Categories.DTO;
-using Application.PagerConfig;
+using Application.DTO;
 
 namespace Application.Interfaces.Categories
 {
  public interface IAddCategoryItemService
     {
-        ResultServices AddCaregoryItem(AddCategoryItemDataModel model);
+        ResultDataModel AddCaregoryItem(AddCategoryItemDataModel model);
     }
 }

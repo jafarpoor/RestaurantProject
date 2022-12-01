@@ -1,7 +1,9 @@
 ﻿using Application.Baskets.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Baskets;
 using AutoMapper;
+using Common.Helper;
 using Domain.Baskets;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,19 +12,20 @@ using System.Linq;
 
 namespace Application.Baskets.Commands
 {
-   public class GetOrCreateBasketForUserService : IGetOrCreateBasketForUserService
+    public class GetOrCreateBasketForUserService : IGetOrCreateBasketForUserService
     {
         private readonly IDatabaseContext _dataBaseContxt;
         private readonly IMapper _mapper;
-        public GetOrCreateBasketForUserService(IDatabaseContext dataBaseContxt,  IMapper mapper)
+        public GetOrCreateBasketForUserService(IDatabaseContext dataBaseContxt, IMapper mapper)
         {
             _dataBaseContxt = dataBaseContxt;
             _mapper = mapper;
         }
-        public BasketDataModel GetOrCreateBasketForUser(string BuyerId)
+        public ResultDataModel<BasketDataModel> GetOrCreateBasketForUser(string BuyerId)
         {
             try
             {
+                BasketDataModel basketDataModel = new BasketDataModel();
                 var buyerIdBasket = _dataBaseContxt.Baskets
                                    .Include(p => p.BasketItems)
                                    .ThenInclude(p => p.CategoryItem)
@@ -31,20 +34,32 @@ namespace Application.Baskets.Commands
 
                 if (buyerIdBasket == null)
                 {
-                    return CreateBasketForUser(BuyerId);
+                    basketDataModel = CreateBasketForUser(BuyerId);
                 }
                 else
                 {
                     var ResultBasket = _mapper.Map<BasketDataModel>(buyerIdBasket);
                     var ResultBasketItem = _mapper.Map<List<BasketItemDataModel>>(ResultBasket.Items);
                     ResultBasket.Items = ResultBasketItem;
-                    return ResultBasket;
+                    basketDataModel = ResultBasket;
                 }
+
+                return new ResultDataModel<BasketDataModel>
+                {
+                    Data = basketDataModel,
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
 
-                throw;
+                return new ResultDataModel<BasketDataModel>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
         }
         private BasketDataModel CreateBasketForUser(string buyerId)

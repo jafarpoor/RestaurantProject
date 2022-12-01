@@ -1,6 +1,8 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.DTO;
+using Common.Helper;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +18,20 @@ namespace Application.Orders.Queries
             _contetx = contetx;
         }
 
-        public List<GetOrderCustomerDetailForUserDataModel> GetOrderDetail(int OrderID)
+        public ResultDataModel<List<GetOrderCustomerDetailForUserDataModel>> GetOrderDetail(int OrderID)
         {
             var orderResult = _contetx.Orders
                              .Include(p => p.OrderItems)
                              .Include(p => p.userAddress)
                              .SingleOrDefault(p => p.Id == OrderID);
+
+            if (orderResult == null)
+                return new ResultDataModel<List<GetOrderCustomerDetailForUserDataModel>>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.NullMassages
+                };
 
             List<GetOrderCustomerDetailForUserDataModel> model = new List<GetOrderCustomerDetailForUserDataModel>();
             foreach (var item in orderResult.OrderItems)
@@ -35,7 +45,13 @@ namespace Application.Orders.Queries
                 };
                 model.Add(orderItm);
             }
-            return model;
+
+            return new ResultDataModel<List<GetOrderCustomerDetailForUserDataModel>>
+            {
+                Data = model,
+                IsSuccess = true,
+                Message = Messages.Successed
+            };
         }
     }
 }

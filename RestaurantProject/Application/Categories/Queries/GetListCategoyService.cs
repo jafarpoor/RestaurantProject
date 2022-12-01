@@ -1,4 +1,5 @@
 ﻿using Application.Categories.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Categories;
 using AutoMapper;
@@ -18,12 +19,19 @@ namespace Application.Categories.Queries
             _context = context;
             _mapper = mapper;
         }
-        public List<ListCategoryDataModel> GetListCategory()
+        public ResultDataModel<List<ListCategoryDataModel>> GetListCategory()
         {
             try
             {
                 List<ListCategoryDataModel> listCategoryDataModels = new List<ListCategoryDataModel>();
                 var Result = _context.Categories.ToList();
+                if (Result == null)
+                    return new ResultDataModel<List<ListCategoryDataModel>>
+                    {
+                        Data = null,
+                        IsSuccess = false,
+                        Message = Messages.NullMassages
+                    };
                 foreach (var item in Result)
                 {
                     ListCategoryDataModel model = new ListCategoryDataModel
@@ -33,12 +41,24 @@ namespace Application.Categories.Queries
                     };
                     listCategoryDataModels.Add(model);
                 }
-                return (listCategoryDataModels);              
+
+                ResultDataModel<List<ListCategoryDataModel>> resultDataModel = new ResultDataModel<List<ListCategoryDataModel>>()
+                {
+                    Data = listCategoryDataModels,
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
+
+                return (resultDataModel);              
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel<List<ListCategoryDataModel>>
+                {
+                    Data  =null ,
+                    IsSuccess = false ,
+                    Message = Messages.UnexpectedError
+                };
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Users;
 using Application.Users.DTO;
 using AutoMapper;
@@ -20,15 +21,25 @@ namespace Application.Users.Commands.EditUserAddress
             _mapper = mapper;
         }
 
-        public EditUserAddressDataModel FindUserAddress(int Id)
+        public ResultDataModel<EditUserAddressDataModel> FindUserAddress(int Id)
         {
             var Result = _context.UserAddresses.SingleOrDefault(p => p.Id == Id);
             if (Result == null)
-                throw new Exception(Messages.NotFund);
+                return new ResultDataModel<EditUserAddressDataModel>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.NotFund
+                };
 
-            return _mapper.Map<EditUserAddressDataModel>(Result);
+            return new ResultDataModel<EditUserAddressDataModel>
+            {
+                Data = _mapper.Map<EditUserAddressDataModel>(Result),
+                IsSuccess = true,
+                Message = Messages.Successed
+            };
         }
-        public void EditAddress(EditUserAddressDataModel editUser)
+        public ResultDataModel EditAddress(EditUserAddressDataModel editUser)
         {
             try
             {
@@ -42,11 +53,20 @@ namespace Application.Users.Commands.EditUserAddress
                 Result.ZipCode = editUser.ZipCode;
 
                 _context.SaveChanges();
+
+                return new ResultDataModel
+                {
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel
+                {
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
         
         }

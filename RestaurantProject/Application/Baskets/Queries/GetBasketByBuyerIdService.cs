@@ -1,4 +1,5 @@
 ﻿using Application.Baskets.DTO;
+using Application.DTO;
 using Application.Interfaces;
 using Application.Interfaces.Baskets;
 using Application.UriComposer;
@@ -19,7 +20,7 @@ namespace Application.Baskets.Queries
             _uriComposerService = uriComposerService;
         }
 
-        public BasketDataModel GetBasketByBuyerId(string BuyerId)
+        public ResultDataModel<BasketDataModel> GetBasketByBuyerId(string BuyerId)
         {
             try
             {
@@ -30,7 +31,12 @@ namespace Application.Baskets.Queries
                                    .SingleOrDefault(p => p.BuyerId == BuyerId);
 
                 if (Result == null)
-                    throw new Exception(Messages.NotFund);
+                    return new ResultDataModel<BasketDataModel>
+                    {
+                        Data = null,
+                        IsSuccess = false,
+                        Message = Messages.NullMassages
+                    };
                 BasketDataModel BasketItemDto = new BasketDataModel()
                 {
                     BuyerId = Result.BuyerId,
@@ -47,12 +53,21 @@ namespace Application.Baskets.Queries
 
                     }).ToList()
                 };
-                return BasketItemDto;
+                return new ResultDataModel<BasketDataModel>
+                {
+                    Data = BasketItemDto,
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel<BasketDataModel>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
         }
     }

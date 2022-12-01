@@ -42,7 +42,7 @@ namespace EndPoint.Site.Controllers
         }
         public async Task<IActionResult> Index(Guid PaymentId)
         {
-            var payment = _paymentervice.getPayment.GetPaymentById(PaymentId);
+            var payment = _paymentervice.getPayment.GetPaymentById(PaymentId).Data;
             if (payment == null)
                 NotFound();
             if (payment.UserId != ClaimUtility.GetUserId(User))

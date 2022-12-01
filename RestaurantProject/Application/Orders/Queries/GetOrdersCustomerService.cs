@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Order;
 using Application.Orders.DTO;
 using Common.Helper;
@@ -18,7 +19,7 @@ namespace Application.Orders.Queries
         {
             _context = context;
         }
-        public List<ListOrdersCustomerDataModel> GetList(string UserId)
+        public ResultDataModel<List<ListOrdersCustomerDataModel>> GetList(string UserId)
         {
 
             var Result = _context.Payments
@@ -34,7 +35,21 @@ namespace Application.Orders.Queries
 
                         }).ToList();
 
-            return Result;
+            if (Result == null)
+                return new ResultDataModel<List<ListOrdersCustomerDataModel>>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.NullMassages
+                };
+
+
+            return new ResultDataModel<List<ListOrdersCustomerDataModel>>
+            {
+                Data = Result,
+                IsSuccess = true,
+                Message = Messages.Successed
+            };
         }
     }
 }

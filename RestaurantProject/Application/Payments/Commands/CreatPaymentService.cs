@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Payments;
 using Application.Payments.DTO;
 using Common.Helper;
@@ -10,7 +11,7 @@ using System.Linq;
 
 namespace Application.Payments.Commands
 {
-   public class CreatPaymentService : ICreatPaymentService
+    public class CreatPaymentService : ICreatPaymentService
     {
         private readonly IDatabaseContext _context;
 
@@ -19,7 +20,7 @@ namespace Application.Payments.Commands
             _context = context;
         }
 
-        public PaymentOfOrderDataModel PayForOrder(int OrderId)
+        public ResultDataModel<PaymentOfOrderDataModel> PayForOrder(int OrderId)
         {
             try
             {
@@ -27,10 +28,16 @@ namespace Application.Payments.Commands
                           .Include(p => p.OrderItems)
                           .SingleOrDefault(p => p.Id == OrderId);
                 if (orders == null)
-                    throw new Exception(Messages.NotFund);
+                    return new ResultDataModel<PaymentOfOrderDataModel>
+                    {
+                        Data = null,
+                        IsSuccess = false,
+                        Message = Messages.NotFund
+                    };
 
                 var pay = _context.Payments.FirstOrDefault(p => p.OrderId == OrderId);
-                if(pay == null)
+                PaymentOfOrderDataModel paymentOfOrderDataModel;
+                if (pay == null)
                 {
                     Payment payment = new Payment
                     {
@@ -41,7 +48,8 @@ namespace Application.Payments.Commands
 
                     _context.Payments.Add(payment);
                     _context.SaveChanges();
-                    return new PaymentOfOrderDataModel
+
+                    paymentOfOrderDataModel = new PaymentOfOrderDataModel()
                     {
                         PaymentId = payment.Id,
                         Amount = payment.Amount,
@@ -50,18 +58,29 @@ namespace Application.Payments.Commands
                 }
                 else
                 {
-                    return new PaymentOfOrderDataModel
+                    paymentOfOrderDataModel = new PaymentOfOrderDataModel()
                     {
                         PaymentId = pay.Id,
                         Amount = pay.Amount,
                         PaymentMethod = orders.PaymentMethod
                     };
                 }
+
+                return new ResultDataModel<PaymentOfOrderDataModel>
+                {
+                    Data = paymentOfOrderDataModel,
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel<PaymentOfOrderDataModel>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
         }
     }

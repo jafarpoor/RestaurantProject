@@ -1,6 +1,8 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Payments;
 using Application.Payments.DTO;
+using Common.Helper;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +22,7 @@ namespace Application.Payments.Queries
             _userMager = userMager;
         }
 
-        public PaymentDataModel GetPaymentById(Guid Id)
+        public ResultDataModel<PaymentDataModel> GetPaymentById(Guid Id)
         {
             var payment = _context.Payments
                          .Include(p => p.Order)
@@ -28,6 +30,14 @@ namespace Application.Payments.Queries
                          .Include(p => p.Order)
                          .SingleOrDefault(p => p.Id == Id);
             var user = _userMager.Users.SingleOrDefault(p => p.Id == payment.Order.UserId);
+
+            if(payment == null || user == null)
+                return new ResultDataModel<PaymentDataModel>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.NotFund
+                };
 
             string description = $"پرداخت سفارش شماره {payment.OrderId} " + Environment.NewLine;
             description += "محصولات" + Environment.NewLine;
@@ -37,7 +47,7 @@ namespace Application.Payments.Queries
                 description += $"-{item}";
             }
 
-            return new PaymentDataModel
+            PaymentDataModel paymentDataModel = new PaymentDataModel
             {
                 Amount = payment.Order.TotalPrice(),
                 Description = description,
@@ -46,6 +56,13 @@ namespace Application.Payments.Queries
                 PhoneNumber = user.PhoneNumber,
                 UserId = user.Id ,
                 OrderId = payment.Order.Id
+            };
+
+            return new ResultDataModel<PaymentDataModel>
+            {
+                Data = paymentDataModel,
+                IsSuccess = true,
+                Message = Messages.Successed
             };
         }
 

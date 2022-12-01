@@ -1,5 +1,7 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Order;
+using Common.Helper;
 using System.Linq;
 
 
@@ -13,10 +15,25 @@ namespace Application.Orders.Queries
         {
             _context = contex;
         }
-        public string GetCode(int OrderId)
+        public ResultDataModel<string> GetCode(int OrderId)
         {
             var OrderCode = _context.Orders.SingleOrDefault(p => p.Id == OrderId).OrderCode;
-            return OrderCode;
+            if (!string.IsNullOrEmpty(OrderCode))
+                return new ResultDataModel<string>
+                {
+                    Data = OrderCode,
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
+
+            else
+                return new ResultDataModel<string>
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = Messages.NotFund
+                };
+
         }
     }
 }

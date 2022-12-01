@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Baskets;
 using Common.Helper;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 
 namespace Application.Baskets.Commands
 {
-  public  class RemoveBasketItemService : IRemoveBasketItemService
+    public class RemoveBasketItemService : IRemoveBasketItemService
     {
         private readonly IDatabaseContext _dataBaseContxt;
         public RemoveBasketItemService(IDatabaseContext dataBaseContxt)
@@ -15,21 +16,32 @@ namespace Application.Baskets.Commands
             _dataBaseContxt = dataBaseContxt;
         }
 
-        public bool RemoveBasketItem(int ItemId)
+        public ResultDataModel RemoveBasketItem(int ItemId)
         {
             try
             {
                 var Result = _dataBaseContxt.BasketItems.SingleOrDefault(p => p.Id == ItemId);
                 if (Result == null)
-                    throw new Exception(Messages.NotFund);
+                    return new ResultDataModel
+                    {
+                        IsSuccess = false,
+                        Message = Messages.NotFund
+                    };
                 _dataBaseContxt.BasketItems.Remove(Result);
                 _dataBaseContxt.SaveChanges();
-                return true;
+                return new ResultDataModel
+                {
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel
+                {
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
 
         }

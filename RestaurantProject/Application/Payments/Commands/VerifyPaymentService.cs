@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Payments;
 using Common.Helper;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace Application.Payments.Commands
             _context = context;
         }
 
-        public bool VerifyPayment(Guid Id, string Authority, long RefId)
+        public ResultDataModel VerifyPayment(Guid Id, string Authority, long RefId)
         {
             try
             {
@@ -26,18 +27,29 @@ namespace Application.Payments.Commands
                        .SingleOrDefault(p => p.Id == Id);
 
                 if (payment == null)
-                    throw new Exception(Messages.NotFund);
+                    return new ResultDataModel
+                    {
+                        IsSuccess = false,
+                        Message = Messages.NullMassages
+                    };
 
                 payment.Order.PaymentDone();
                 payment.PaymentIsDone(Authority, RefId);
 
                 _context.SaveChanges();
-                return true;
+                return new ResultDataModel
+                {
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel
+                {
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
             }
 
         }

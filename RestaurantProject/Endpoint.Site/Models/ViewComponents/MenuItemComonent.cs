@@ -21,7 +21,7 @@ namespace EndPoint.Site.Models.ViewComponents
 
             List<ListCategoryDataModel> categoryList = null;
 
-            categoryList = _categoy.getListCategoyService.GetListCategory();
+            categoryList = _categoy.getListCategoyService.GetListCategory().Data;
             return View(viewName: "MenuItemComonent", model: categoryList);
         }
     }

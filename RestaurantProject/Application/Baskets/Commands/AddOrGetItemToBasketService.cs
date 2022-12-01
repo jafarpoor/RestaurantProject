@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Baskets;
 using Common.Helper;
 using Domain.Baskets;
@@ -16,13 +17,17 @@ namespace Application.Baskets.Commands
         {
             _dataBaseContxt = dataBaseContxt;
         }
-        public void AddOrGetItemToBasket(int basketId, int catalogItemId, int Qty)
+        public ResultDataModel AddOrGetItemToBasket(int basketId, int catalogItemId, int Qty)
         {
             try
             {
                 var BasketResult = _dataBaseContxt.Baskets.FirstOrDefault(p => p.Id == basketId);
                 if (BasketResult == null)
-                    throw new Exception(Messages.NotFund);
+                    return new ResultDataModel
+                    {
+                        IsSuccess = false,
+                        Message = Messages.NullMassages
+                    };
 
                 var BasketItemResult = _dataBaseContxt.BasketItems
                                         .Include(p => p.Basket)
@@ -43,18 +48,24 @@ namespace Application.Baskets.Commands
                     _dataBaseContxt.BasketItems.Add(basketItem);
                 }
              
-                _dataBaseContxt.SaveChanges();             
+                _dataBaseContxt.SaveChanges();
+                return new ResultDataModel
+                {
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
             }
             catch (Exception)
             {
-
-                throw;
+                return new ResultDataModel
+                {
+                    IsSuccess = false,
+                    Message = Messages.UnexpectedError
+                };
+                
             }
            
-        }
-  
-
-      
+        }   
 
     }
 }

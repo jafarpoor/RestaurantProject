@@ -1,9 +1,10 @@
-﻿using Application.Payments.DTO;
+﻿using Application.DTO;
+using Application.Payments.DTO;
 
 namespace Application.Interfaces.Payments
 {
    public interface ICreatPaymentService
     {
-        PaymentOfOrderDataModel PayForOrder(int OrderId);
+        ResultDataModel<PaymentOfOrderDataModel> PayForOrder(int OrderId);
     }
 }

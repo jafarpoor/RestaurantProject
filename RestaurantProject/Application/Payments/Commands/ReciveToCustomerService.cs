@@ -1,5 +1,7 @@
-﻿using Application.Interfaces;
+﻿using Application.DTO;
+using Application.Interfaces;
 using Application.Interfaces.Payments;
+using Common.Helper;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -14,16 +16,34 @@ namespace Application.Payments.Commands
             _contetx = contetx;
         }
 
-        public void ChangeStatus(int OrderId)
+        public ResultDataModel ChangeStatus(int OrderId)
         {
-            var Result = _contetx.Payments
-                        .Include(p => p.Order)
-                        .SingleOrDefault(p => p.OrderId == OrderId);
+            try
+            {
+                var Result = _contetx.Payments
+                     .Include(p => p.Order)
+                     .SingleOrDefault(p => p.OrderId == OrderId);
 
-             Result.Order.OrderDelivered();
-            if (Result.Order.PaymentMethod == Domain.Orders.PaymentMethod.PaymentOnTheSpot)
-                Result.Order.PaymentDone();
-            _contetx.SaveChanges();
+                Result.Order.OrderDelivered();
+                if (Result.Order.PaymentMethod == Domain.Orders.PaymentMethod.PaymentOnTheSpot)
+                    Result.Order.PaymentDone();
+                _contetx.SaveChanges();
+
+                return new ResultDataModel
+                {
+                    IsSuccess = true,
+                    Message = Messages.Successed
+                };
+            }
+            catch (System.Exception)
+            {
+                return new ResultDataModel
+                {
+                    IsSuccess = false,
+                    Message = Messages.NotFund
+                };
+            }
+         
         }
     }
 }

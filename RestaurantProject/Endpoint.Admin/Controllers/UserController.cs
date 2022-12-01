@@ -25,7 +25,7 @@ namespace EndPoint.Admin.Controllers
         {
             ListUsersViewModels listUsersViewModels = new ListUsersViewModels();
             
-            listUsersViewModels.listUsersDataModels = _userManager.getUsers.GetList();
+            listUsersViewModels.listUsersDataModels = _userManager.getUsers.GetList().Data;
             listUsersViewModels.columnsName = _userManager.getUsers.GetColumnsName();
 
             return View(listUsersViewModels);

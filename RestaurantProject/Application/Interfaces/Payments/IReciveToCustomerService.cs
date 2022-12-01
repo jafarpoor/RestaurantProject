@@ -1,8 +1,10 @@
 ﻿
+using Application.DTO;
+
 namespace Application.Interfaces.Payments
 {
   public  interface IReciveToCustomerService
     {
-        void ChangeStatus(int OrderId);
+        ResultDataModel ChangeStatus(int OrderId);
     }
 }
