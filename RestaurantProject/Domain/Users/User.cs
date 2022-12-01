@@ -12,7 +12,5 @@ namespace Domain.Users
         public string FristName { get; set; }
         [Required]
         public string LastName { get; set; }
-
-        public string Address { get; set; }
     }
 }

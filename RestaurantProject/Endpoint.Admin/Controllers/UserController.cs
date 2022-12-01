@@ -35,7 +35,7 @@ namespace EndPoint.Admin.Controllers
         public IActionResult Profile(string Id)
         {
 
-            return View(_userManager.getUsers.Find(Id));
+            return View(_userManager.getUsers.Find(Id).Data);
         }
 
         [HttpPost]

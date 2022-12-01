@@ -50,7 +50,7 @@
             url: "AddCategory",
             data: postData,
             success: function (data) {
-                if (data.result) {
+                if (data.isSuccess == true) {
                     Swal.fire({
                         text: data.message,
                         icon: 'success',

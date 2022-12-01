@@ -22,8 +22,6 @@ namespace Application.Users.DTO
         public string PhoneNumber { get; set; }
         [DisplayName("نام کاربری")]
         public string UserName { get; set; }
-        [DisplayName("آدرس")]
-        public string Address { get; set; }
        
     }
 }

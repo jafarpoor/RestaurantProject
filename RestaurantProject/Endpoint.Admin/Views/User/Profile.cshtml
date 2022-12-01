@@ -41,12 +41,6 @@
             </div>
 
             <div class="form-group">
-            <label asp-for="Address" class="control-label"></label>
-             <textarea id="Address" class="form-control " asp-for="Address" rows="5"></textarea>
-            <span asp-validation-for="Address" class="text-danger"></span>
-        </div>
-
-            <div class="form-group">
                 <a onclick="EditUser()" class="btn btn-primary btn-login">ثبت </a>
             </div>
         </form>
@@ -88,7 +82,7 @@
             url: "Profile",
             data: postData,
             success: function (data) {
-                if (data.result) {
+                if (data.isSuccess == true) {
                     Swal.fire({
                         text: data.message,
                         icon: 'success',

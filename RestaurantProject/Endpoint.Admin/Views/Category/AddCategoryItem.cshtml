@@ -135,7 +135,7 @@
                 data: addCategoryItemDataModelData,
                 headers: { "RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val() },
                 success: function (data) {
-                    if (data.result) {
+                    if (data.isSuccess == true) {
                         swal.fire(
                             'موفق!',
                             data.message ,

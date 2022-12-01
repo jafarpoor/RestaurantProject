@@ -32,7 +32,6 @@ namespace Application.Users.Commands.EditUser
                 User.LastName = editUserDataModel.LastName;
                 User.PhoneNumber = editUserDataModel.PhoneNumber;
                 User.Email = editUserDataModel.Email;
-                User.Address = editUserDataModel.Address;
                 User.UserName = editUserDataModel.UserName;
                 _context.SaveChanges();
                 return new ResultDataModel
