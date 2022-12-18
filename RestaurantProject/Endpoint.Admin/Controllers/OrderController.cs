@@ -57,7 +57,7 @@ namespace EndPoint.Admin.Controllers
             }
             model.OrderStatusItems = ResultSelectItem;
             model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(OrderStatusName).Data;
-            return View(model);
+            return Json(model);
         }
 
         public IActionResult OrderDetail(int Id)
