@@ -1,11 +1,12 @@
-﻿using Builders.Order;
-using Domain.Orders;
+﻿
+using Builders.Order;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitTest.Builders;
+using Xunit;
 
 namespace UnitTest.Domain.Order
 {

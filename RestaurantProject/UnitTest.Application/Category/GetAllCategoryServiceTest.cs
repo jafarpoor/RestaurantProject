@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitTest.Builders;
+using Xunit;
 
 namespace UnitTest.Application.Category
 {
@@ -47,7 +48,7 @@ namespace UnitTest.Application.Category
 
             //Acat
             var getCategorySerevice = new GetListCategoyService(dbConnection , mapper);
-            var categoryResult = getCategorySerevice.GetListCategory();
+            var categoryResult = getCategorySerevice.GetListCategory().Data;
 
             //Assert
             Assert.Equal(2, categoryResult.Count);

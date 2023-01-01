@@ -1,4 +1,5 @@
-﻿using Application.Categories.DTO;
+﻿
+using Application.Categories.DTO;
 using Application.Interfaces.Categories;
 using EndPoint.Admin.Controllers;
 using Infrastructure.Api.ImageApi;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace UnitTest.Controller.Category
 {
@@ -20,7 +22,7 @@ namespace UnitTest.Controller.Category
             moqData moq = new moqData();
         var moqCategory = new Mock<ICategoryFacade>();
         var moqImageUrl = new Mock<IImageUploadService>();
-            moqCategory.Setup(p => p.getListCategoyService.GetListCategory()).Returns(moq.GetAll());
+            moqCategory.Setup(p => p.getListCategoyService.GetListCategory().Data).Returns(moq.GetAll());
 
             CategoryController  categoryController = new CategoryController(moqCategory.Object  , moqImageUrl.Object);
 
