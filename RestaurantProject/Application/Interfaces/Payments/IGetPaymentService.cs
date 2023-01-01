@@ -8,6 +8,7 @@ namespace Application.Interfaces.Payments
   public  interface IGetPaymentService
     {
         ResultDataModel<PaymentDataModel> GetPaymentById(Guid Id);
-       
+
+
     }
 }

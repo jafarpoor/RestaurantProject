@@ -65,7 +65,5 @@ namespace Application.Payments.Queries
                 Message = Messages.Successed
             };
         }
-
-
     }
 }

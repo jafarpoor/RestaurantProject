@@ -1,4 +1,4 @@
-﻿@model EndPoint.Admin.ViewModels.GetListOrdersForSendViewModel
+﻿@model EndPoint.Admin.ViewModels.GetListAllOrderViewModel
 @{
     ViewData["Title"] = "لیست سفارشات کاربر";
 }
@@ -20,7 +20,7 @@
                                     </select>
 
                                 </div>
-                                <table class="multi-table table table-hover dataTable" style="width: 100%;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                <table class="multi-table table table-hover dataTable" style="width: 100%;" id="DataList" role="grid" aria-describedby="DataTables_Table_0_info">
                                     <thead>
                                         <tr role="row">
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;">کد سفارش</th>
@@ -34,16 +34,14 @@
 
                                         @foreach (var item in Model.getListOrdersForSendDataModels)
                                         {
-                                            <tr role="row">
-                                                <td class="sorting_1">@item.OrderCode</td>
-                                                <td class="sorting_1">@item.OrderStatus</td>
-                                                <td class="sorting_1">@item.PayStatus</td>
-                                                <td class="sorting_1">@item.PayDate</td>
-                                                <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
-                                                <td class="text-center fas fa-wrench"> <a asp-controller="order" asp-action="OrderDelivered" asp-route-Id="@item.OrderId">تحویل سفارش</a></td>
-
-                                                <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
-                                            </tr>
+                                        <tr role="row">
+                                            <td class="sorting_1">@item.OrderCode</td>
+                                            <td class="sorting_1">@item.OrderStatus</td>
+                                            <td class="sorting_1">@item.PayStatus</td>
+                                            <td class="sorting_1">@item.PayDate</td>
+                                            <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
+                                            <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
+                                        </tr>
                                         }
                                     </tbody>
                                 </table>
@@ -66,19 +64,24 @@
         var postData = {
             'OrderStatusName': OrderStatus
         };
+       // var table = $("#DataList").DataTable();
         $.ajax({
             contentType: 'application/x-www-form-urlencoded',
             dataType: 'json',
             type: "POST",
             url: "/order/Index",
-            data: postData ,
-            success: function () {
-                location.reload();
+            data: postData,
+            success: function (data) {
+                console.log(data.getListOrdersForSendDataModels);
+
+                $("#DataList").html(data.getListOrdersForSendDataModels);
             },
             error: function (request, status, error) {
                 alert(request.responseText);
             }
-        })
+        });
+
+       // $("#DataList").DataTable().ajax.reload(null, false);
     }
     </script>
 

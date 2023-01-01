@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "OrderForSend";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Application.DTO.ResultDataModel<List<Application.Orders.DTO.GetListOrderForSendDataModel>>
+@{
+    ViewData["Title"] = "لیست سفارشات آماده ارسال";
+}
+
+
+<div class="layout-px-spacing">
+    <div class="row layout-top-spacing" id="cancel-row">
+
+        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+            <div class="widget-content widget-content-area br-6">
+                <div class="table-responsive mb-4 mt-4">
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="multi-table table table-hover dataTable" style="width: 100%;" id="DataList" role="grid" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;">کد سفارش</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;">وضعیت سفارش</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;">نوع پرداخت</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;">تاریخ پرداخت</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" activate to sort column ascending" style="width: 104px;"> مبلغ پرداخت</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model.Data)
+                                        {
+                                            <tr role="row">
+                                                <td class="sorting_1">@item.OrderCode</td>
+                                                <td class="sorting_1">@item.OrderStatus</td>
+                                                <td class="sorting_1">@item.PayStatus</td>
+                                                <td class="sorting_1">@item.PayDate</td>
+                                                <td class="sorting_1">@item.PayAmount.ToString("n0")</td>
+
+                                                @if (item.OrderStatus.Contains("در حال پردازش"))
+                                                {
+                                                    <td class="text-center fas fa-wrench"> <a asp-controller="order" asp-action="OrderDelivered" asp-route-Id="@item.OrderId">تحویل سفارش</a></td>
+                                                }
+
+
+                                                <td class="text-center fas fa-wrench"> @Html.ActionLink("جزئیات سفارش", "OrderDetail", new { Id = item.OrderId })</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+    function ChangeStatus()
+    {
+        var OrderStatus = $("#OrderStatus").val();
+        var postData = {
+            'OrderStatusName': OrderStatus
+        };
+       // var table = $("#DataList").DataTable();
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/order/Index",
+            data: postData,
+            success: function (data) {
+                console.log(data.getListOrdersForSendDataModels);
+
+                $("#DataList").html(data.getListOrdersForSendDataModels);
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+
+       // $("#DataList").DataTable().ajax.reload(null, false);
+    }
+    </script>
+
+}
+

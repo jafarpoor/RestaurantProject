@@ -416,3 +416,4 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\ref\EndPoint.Admin.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.genruntimeconfig.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\OrderForSend.cshtml.g.cs

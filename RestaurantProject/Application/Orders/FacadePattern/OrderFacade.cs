@@ -51,12 +51,12 @@ namespace Application.Orders.FacadePattern
             }
         }
 
-        private IGetListOrdersForSendService _getListOrdersForSendService;
-        public IGetListOrdersForSendService getListOrdersForSendService
+        private IGetListAllOrderService _getListAllOrderService;
+        public IGetListAllOrderService getListAllOrderService
         {
             get
             {
-                return _getListOrdersForSendService = _getListOrdersForSendService ?? new GetListOrdersForSendService(_context);
+                return _getListAllOrderService = _getListAllOrderService ?? new GetListAllOrderService(_context);
             }
         }
 
@@ -76,7 +76,16 @@ namespace Application.Orders.FacadePattern
             {
                 return _getOrderCustomerDetailForUserService = _getOrderCustomerDetailForUserService ?? new GetOrderCustomerDetailForUserService(_context);
             }
-        } 
+        }
+
+        private IGetOrdersListForSendService _getOrdersListForSendService;
+        public IGetOrdersListForSendService getOrdersListForSendService
+        {
+            get
+            {
+                return _getOrdersListForSendService = _getOrdersListForSendService ?? new GetOrdersListForSendService(_context);
+            }
+        }
     }
       
     }

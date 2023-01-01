@@ -1,4 +1,4 @@
-﻿@model Application.Orders.DTO.GetOrderCustomerDetailForAdminDataModel
+﻿@model Application.DTO.ResultDataModel<Application.Orders.DTO.GetOrderCustomerDetailForAdminDataModel>
 @{
     ViewData["Title"] = "جزئیات سفارش";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,15 +15,15 @@
         </div>
         <div class="widget-content widget-content-area">
             <div class="text-danger"></div>
-            <label asp-for="UserName">نام کاربر</label>
-            <input id="Name" type="text" class="form-control" value="@Model.UserName" readonly>
+            <label >نام کاربر</label>
+            <input id="Name" type="text" class="form-control" value="@Model.Data.UserName" readonly>
 
-            <label asp-for="UserName">شماره تلفن</label>
-            <input id="Name" type="text" class="form-control" value="@Model.PhoneNumber" readonly>
+            <label >شماره تلفن</label>
+            <input id="Name" type="text" class="form-control" value="@Model.Data.PhoneNumber" readonly>
 
             <div class="form-group mb-4">
-                <label asp-for="UserName">آدرس</label>
-                <input id="Name" type="text" class="form-control" value="@Model.Address" readonly>
+                <label >آدرس</label>
+                <input id="Name" type="text" class="form-control" value="@Model.Data.Address" readonly>
             </div>
 
             <table class="multi-table table table-hover dataTable" style="width: 100%;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
 
-                    @foreach (var item in Model.orderDetailForAdminDataModels)
+                    @foreach (var item in Model.Data.orderDetailForAdminDataModels)
                     {
                     <tr role="row">
                         <td class="sorting_1">@item.ProductOrderName</td>

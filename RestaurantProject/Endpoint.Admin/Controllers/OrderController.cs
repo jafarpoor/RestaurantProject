@@ -25,7 +25,7 @@ namespace EndPoint.Admin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            GetListOrdersForSendViewModel model = new GetListOrdersForSendViewModel();
+            GetListAllOrderViewModel model = new GetListAllOrderViewModel();
             var ResultSelectItem = new List<SelectListItem>();
 
             foreach (var item in EnumHelper<OrderStatus>.GetValues(OrderStatus.All))
@@ -37,14 +37,14 @@ namespace EndPoint.Admin.Controllers
                 }); ;
             }
             model.OrderStatusItems = ResultSelectItem;
-            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(null).Data;
+            model.getListOrdersForSendDataModels = _orderFacade.getListAllOrderService.GetList(null).Data;
             return View(model);
         }
 
         [HttpPost]
         public IActionResult Index(string OrderStatusName)
         {
-            GetListOrdersForSendViewModel model = new GetListOrdersForSendViewModel();
+            GetListAllOrderViewModel model = new GetListAllOrderViewModel();
             var ResultSelectItem = new List<SelectListItem>();
 
             foreach (var item in EnumHelper<OrderStatus>.GetValues(OrderStatus.All))
@@ -56,10 +56,11 @@ namespace EndPoint.Admin.Controllers
                 }); ;
             }
             model.OrderStatusItems = ResultSelectItem;
-            model.getListOrdersForSendDataModels = _orderFacade.getListOrdersForSendService.GetList(OrderStatusName).Data;
+            model.getListOrdersForSendDataModels = _orderFacade.getListAllOrderService.GetList(OrderStatusName).Data;
             return Json(model);
         }
 
+        [HttpGet]
         public IActionResult OrderDetail(int Id)
         {
             return View(_orderFacade.getOrderCustomerDetailForAdminService.GetOrderDetail(Id));
@@ -70,5 +71,12 @@ namespace EndPoint.Admin.Controllers
             _paymentFacade.reciveToCustomerService.ChangeStatus(Id);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult OrderForSend()
+        {
+            return View(_orderFacade.getOrdersListForSendService.GetResultData());
+        }
+
     }
 }
