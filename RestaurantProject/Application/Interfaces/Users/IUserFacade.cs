@@ -11,5 +11,6 @@ namespace Application.Interfaces
         IGetUserAddressService getUserAddressService { get; }
         IAddUserAddressService addUserAddressService { get; }
         IEditUserAddressService editUserAddressService { get; }
+        ICreatUserTokenService creatUserTokenService { get; }
     }
 }

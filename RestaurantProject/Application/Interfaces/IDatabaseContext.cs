@@ -22,6 +22,7 @@ namespace Application.Interfaces
         DbSet<OrderItem> OrderItems { get; set; }
         DbSet<UserAddress> UserAddresses { get; set; }
         DbSet<Payment> Payments { get; set; }
+        DbSet<UserToken> UserTokens { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
 

@@ -31,7 +31,7 @@ namespace Persistence.Contexts
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<UserAddress> UserAddresses { get; set; }
         public DbSet<Payment> Payments { get; set; }
-
+        public DbSet<UserToken> UserTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.HasDefaultSchema("dbo");

@@ -4,6 +4,7 @@ using Application.Users.Commands.AddUser;
 using Application.Users.Commands.AddUserAddress;
 using Application.Users.Commands.EditUser;
 using Application.Users.Commands.EditUserAddress;
+using Application.Users.Commands.Token;
 using Application.Users.Queries;
 using AutoMapper;
 using Domain.Users;
@@ -84,5 +85,15 @@ namespace Application.Users.FacadePattern
                 return _editUserAddressService = _editUserAddressService ?? new EditUserAddressService(_context , _mapper);
             }
         }
+
+        private ICreatUserTokenService _creatUserTokenService;
+        public ICreatUserTokenService creatUserTokenService
+        {
+            get
+            {
+                return _creatUserTokenService = _creatUserTokenService ?? new CreatUserTokenService(_context);
+            }
+        }
+
     }
 }
