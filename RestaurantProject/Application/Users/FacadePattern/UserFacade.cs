@@ -19,13 +19,20 @@ namespace Application.Users.FacadePattern
         private readonly UserManager<User> _userManager;
         private readonly IDatabaseContext _context;
         private readonly IMapper _mapper;
+        private readonly ICreatUserTokenService _userTokenRepository;
 
-        public UserFacade(IHostingEnvironment environment ,  UserManager<User> userManager , IDatabaseContext context , IMapper mapper)
+        public UserFacade(IHostingEnvironment environment , 
+                            UserManager<User> userManager , 
+                            IDatabaseContext context ,
+                            IMapper mapper ,
+                            ICreatUserTokenService userTokenRepository
+            )
         {
             _environment = environment;
             _userManager = userManager;
             _context = context;
             _mapper = mapper;
+            _userTokenRepository = userTokenRepository;
         }
 
 
@@ -92,6 +99,15 @@ namespace Application.Users.FacadePattern
             get
             {
                 return _creatUserTokenService = _creatUserTokenService ?? new CreatUserTokenService(_context);
+            }
+        }
+
+        private ITokenValidator _tokenValidator;
+        public ITokenValidator tokenValidator
+        {
+            get
+            {
+                return _tokenValidator = _tokenValidator ?? new TokenValidator(_userManager , creatUserTokenService ,_context);
             }
         }
 

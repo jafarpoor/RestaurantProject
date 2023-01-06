@@ -244,6 +244,14 @@ E:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.
 E:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\ref\EndPoint.Admin.dll
 E:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.pdb
 E:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.genruntimeconfig.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.GeneratedMSBuildEditorConfig.editorconfig
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfoInputs.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfo.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.CoreCompileInputs.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.MvcApplicationPartsAssemblyInfo.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.RazorAssemblyInfo.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.RazorAssemblyInfo.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\appsettings.Development.json
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\appsettings.json
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\EndPoint.Admin.exe
@@ -259,6 +267,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\AutoMappe
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Humanizer.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -378,14 +387,6 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Persisten
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Application.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Common.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\bin\Debug\net5.0\Domain.pdb
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.AssemblyReference.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.GeneratedMSBuildEditorConfig.editorconfig
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfoInputs.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.AssemblyInfo.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.csproj.CoreCompileInputs.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.MvcApplicationPartsAssemblyInfo.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.RazorAssemblyInfo.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.RazorAssemblyInfo.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\staticwebassets\EndPoint.Admin.StaticWebAssets.Manifest.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\staticwebassets\EndPoint.Admin.StaticWebAssets.xml
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\scopedcss\bundle\EndPoint.Admin.styles.css
@@ -401,6 +402,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Vie
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\Index.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\OrderDetail.cshtml.g.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\OrderForSend.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -416,4 +418,3 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\ref\EndPoint.Admin.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\EndPoint.Admin.genruntimeconfig.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.Admin\obj\Debug\net5.0\Razor\Views\Order\OrderForSend.cshtml.g.cs

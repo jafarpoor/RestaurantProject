@@ -1,3 +1,9 @@
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.csproj.AssemblyReference.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.GeneratedMSBuildEditorConfig.editorconfig
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.AssemblyInfoInputs.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.AssemblyInfo.cs
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.csproj.CoreCompileInputs.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.MvcApplicationPartsAssemblyInfo.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\appsettings.Development.json
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\appsettings.json
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\EndPoint.API.exe
@@ -10,6 +16,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\EndPoint.AP
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\AutoMapper.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
+F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -58,13 +65,7 @@ F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Infrastruct
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Persistence.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Common.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.API\bin\Debug\net5.0\Domain.pdb
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.csproj.AssemblyReference.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.GeneratedMSBuildEditorConfig.editorconfig
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.AssemblyInfoInputs.cache
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.AssemblyInfo.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.csproj.CoreCompileInputs.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.MvcApplicationPartsAssemblyInfo.cs
-F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\EndPoint.API.MvcApplicationPartsAssemblyInfo.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\staticwebassets\EndPoint.API.StaticWebAssets.Manifest.cache
 F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\staticwebassets\EndPoint.API.StaticWebAssets.xml
 F:\RestaurantProject\RestaurantProject\EndPoint.API\obj\Debug\net5.0\scopedcss\bundle\EndPoint.API.styles.css

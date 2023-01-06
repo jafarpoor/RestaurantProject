@@ -31,6 +31,11 @@ E:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastru
 E:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
 E:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
 E:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Infrastructure.deps.json
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Infrastructure.dll
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\ref\Infrastructure.dll
@@ -43,12 +48,7 @@ F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Applicati
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Common.pdb
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Domain.pdb
 F:\RestaurantProject\RestaurantProject\Infrastructure\bin\Debug\net5.0\Persistence.pdb
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
+F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
 F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
-F:\RestaurantProject\RestaurantProject\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete

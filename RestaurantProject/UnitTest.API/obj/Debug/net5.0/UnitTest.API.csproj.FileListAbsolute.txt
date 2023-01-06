@@ -88,7 +88,6 @@ F:\RestaurantProject\RestaurantProject\UnitTest.API\bin\Debug\net5.0\zh-Hans\Mic
 F:\RestaurantProject\RestaurantProject\UnitTest.API\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.API\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.API\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-F:\RestaurantProject\RestaurantProject\UnitTest.API\obj\Debug\net5.0\UnitTest.API.csproj.AssemblyReference.cache
 F:\RestaurantProject\RestaurantProject\UnitTest.API\obj\Debug\net5.0\UnitTest.API.GeneratedMSBuildEditorConfig.editorconfig
 F:\RestaurantProject\RestaurantProject\UnitTest.API\obj\Debug\net5.0\UnitTest.API.AssemblyInfoInputs.cache
 F:\RestaurantProject\RestaurantProject\UnitTest.API\obj\Debug\net5.0\UnitTest.API.AssemblyInfo.cs

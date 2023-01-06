@@ -1,4 +1,9 @@
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\CoverletSourceRootsMapping
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.csproj.AssemblyReference.cache
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.GeneratedMSBuildEditorConfig.editorconfig
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.AssemblyInfoInputs.cache
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.AssemblyInfo.cs
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.csproj.CoreCompileInputs.cache
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\testhost.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\EndPoint.Admin.Views.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\EndPoint.Admin.Views.pdb
@@ -24,6 +29,7 @@ F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Auto
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Castle.Core.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Humanizer.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\MD.PersianDateTime.Core.dll
+F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -222,11 +228,6 @@ F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Comm
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Domain.pdb
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Infrastructure.pdb
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\bin\Debug\net5.0\Persistence.pdb
-F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.csproj.AssemblyReference.cache
-F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.GeneratedMSBuildEditorConfig.editorconfig
-F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.AssemblyInfoInputs.cache
-F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.AssemblyInfo.cs
-F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.csproj.CoreCompileInputs.cache
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.csproj.CopyComplete
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\UnitTest.Controller.dll
 F:\RestaurantProject\RestaurantProject\UnitTest.Controller\obj\Debug\net5.0\ref\UnitTest.Controller.dll
