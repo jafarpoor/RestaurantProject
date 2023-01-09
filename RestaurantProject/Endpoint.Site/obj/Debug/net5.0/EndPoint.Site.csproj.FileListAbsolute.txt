@@ -442,3 +442,4 @@ F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.S
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\ref\EndPoint.Site.dll
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.pdb
 F:\RestaurantProject\RestaurantProject\EndPoint.Site\obj\Debug\net5.0\EndPoint.Site.genruntimeconfig.cache
+F:\RestaurantProject\RestaurantProject\EndPoint.Site\bin\Debug\net5.0\microsoft.identitymodel.dll

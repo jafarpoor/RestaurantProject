@@ -1,12 +1,12 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using System.Collections.Generic;
 
 namespace Domain.Baskets
 {
     [Auditable]
-    public  class Basket
+    public  class Basket : BaseEntity
     {
-        public int Id { get; set; }
         public string BuyerId { get; set; }
         public ICollection<BasketItem> BasketItems { get; set; }
     }

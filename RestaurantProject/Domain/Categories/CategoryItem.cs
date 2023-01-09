@@ -1,13 +1,13 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Categories
 {
     [Auditable]
-    public class CategoryItem
+    public class CategoryItem : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

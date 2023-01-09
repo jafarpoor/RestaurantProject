@@ -1,11 +1,11 @@
-﻿using Domain.Users;
+﻿using Domain.BaseEntities;
+using Domain.Users;
 using System;
 
 namespace Domain.Users
 {
-    public class UserToken
+    public class UserToken : BaseEntity
     {
-        public int Id { get; set; }
         public string HashToken { get; set; }
         public DateTime ExpTime { get; set; }
         public string MobilModel { get; set; }

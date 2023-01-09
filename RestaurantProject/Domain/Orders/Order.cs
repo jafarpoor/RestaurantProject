@@ -1,4 +1,5 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using Domain.Payments;
 using Domain.Users;
 using System;
@@ -10,9 +11,8 @@ using System.Linq;
 namespace Domain.Orders
 {
     [Auditable]
-    public class Order
+    public class Order : BaseEntity
     {
-        public int Id { get; set; }
         public string UserId { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.Now;
         public UserAddress userAddress { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -6,9 +7,8 @@ using System.ComponentModel.DataAnnotations;
 namespace Domain.Categories
 {
     [Auditable]
-   public  class Category
+   public  class Category : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public string TypeName { get; set; }
 

@@ -1,11 +1,11 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 
 namespace Domain.Users
 {
     [Auditable]
-    public class UserAddress
+    public class UserAddress : BaseEntity
     {
-        public int Id { get; set; }
         public string State { get;  set; }
         public string City { get;  set; }
         public string ZipCode { get;  set; }

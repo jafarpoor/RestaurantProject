@@ -1,13 +1,13 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using Domain.Categories;
 using System;
 
 namespace Domain.Baskets
 {
     [Auditable]
-  public  class BasketItem
+  public  class BasketItem : BaseEntity
     {
-        public int Id { get; set; }
         public CategoryItem CategoryItem { get; set; }
         public int CategoryItemId { get; set; }
         public Basket Basket { get; set; }

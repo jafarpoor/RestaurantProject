@@ -11,6 +11,7 @@ using Application.UriComposer;
 using Application.Users.FacadePattern;
 using AutoMapper;
 using Domain.Users;
+using EndPoint.Site.Utilities;
 using Infrastructure.Api.ImageApi;
 using Infrastructure.AutoMapperConfigs;
 using Infrastructure.IdentityConfigs;
@@ -66,7 +67,8 @@ namespace EndPoint.Site
             services.AddTransient<IBasketFacade, BasketFacade>();
             services.AddTransient<IOrderFacade, OrderFacade>();
             services.AddTransient<IPaymentFacade, PaymentFacade>();
-
+            services.AddScoped<IUserClaimsPrincipalFactory<User>, AddMyClaims>();
+            services.AddAuthorization();
             //public
             services.AddTransient<IUriComposerService, UriComposerService>();
 

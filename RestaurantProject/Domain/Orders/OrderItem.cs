@@ -1,12 +1,12 @@
 ﻿using Domain.Attributes;
+using Domain.BaseEntities;
 using Domain.Categories;
 
 namespace Domain.Orders
 {
     [Auditable]
-  public  class OrderItem
+  public  class OrderItem : BaseEntity
     {
-        public int Id { get; set; }
         public CategoryItem CateoryItem { get; set; }
         public int CategoryItemId { get;  set; }
         public string ProductName { get;  set; }
